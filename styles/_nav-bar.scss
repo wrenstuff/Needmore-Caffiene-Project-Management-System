@@ -1,0 +1,49 @@
+@use 'color';
+
+.nav-bar {
+
+    background-color: color.$color-primary;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-left li {
+        float: left;
+    }
+
+    .nav-right  li {
+        float: right;
+    }
+
+    ul {
+
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: color.$color-primary;
+
+        li {
+
+            a {
+
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                display: block;
+                color: color.$color-dark-text;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+
+                //on hover
+                &:hover {
+                    background-color: color.$color-tertiary;
+                }
+
+            }
+
+        }
+
+    }
+
+}
