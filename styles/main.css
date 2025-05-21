@@ -32,4 +32,18 @@
 }
 .nav-bar ul li a:hover {
   background-color: #A1A1A1;
+}
+
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.page-footer .social-media-links {
+  float: left;
+}
+.page-footer .contact-info {
+  float: right;
+}
+.page-footer ul {
+  list-style-type: none;
 }/*# sourceMappingURL=main.css.map */

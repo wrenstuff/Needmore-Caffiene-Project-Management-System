@@ -1,0 +1,23 @@
+@use 'color';
+
+.page-footer {
+
+    display: flex;
+    justify-content: space-between;
+
+    .social-media-links {
+        float: left;
+    }
+
+    .contact-info {
+        float: right;
+    }
+
+
+    ul {
+
+        list-style-type: none;
+
+    };
+
+}
