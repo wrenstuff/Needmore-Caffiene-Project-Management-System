@@ -2,15 +2,68 @@
 
 .page-footer {
 
-    display: flex;
-    justify-content: space-between;
+    background-color: color.$color-primary;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 
     .social-media-links {
-        float: left;
+        grid-row: 1 / span 2;
+        grid-column: 1 / span 2;
+
+        display: flex;
+
+        ul {
+
+            li {
+            
+                float: left;
+
+            }
+
+        }
+
     }
 
     .contact-info {
-        float: right;
+        grid-row: 1 / span 3;
+        grid-column: 3 / span 1;
+
+        display: flex;
+
+        ul {
+
+            right: 0;
+
+        }
+
+    }
+
+    .legal-info {
+        grid-row: 3 / span 1;
+        grid-column: 2 / span 1;
+
+        display: flex;
+
+        ul {
+
+            li {
+            
+                float: left;
+
+            }
+
+        }
+
+    }
+
+    .copyright {
+        grid-row: 3 / span 1;
+        grid-column: 1 / span 1;
+
+        display: flex;
     }
 
 

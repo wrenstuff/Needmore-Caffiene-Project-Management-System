@@ -21,6 +21,7 @@ connectedCallback() {
     </div>
     <div class="contact-info">
         <ul>
+            <li><h3>Contact Us</h3></li>
             <li><p><a href="#">Banana Street</a> : Address</p></li>
             <li><p><a href="#">+64 123 123 1234</a> : Phone</p></li>
             <li><p><a href="mailto:#">email@email.com</a> : Email</p></li>
@@ -34,7 +35,7 @@ connectedCallback() {
         </ul>
     </div>
     <div class="copyright">
-        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+        <p>&copy; 2025 Needmore Caffiene. All rights reserved.</p>
     </div>
 </div>
     `

@@ -35,14 +35,40 @@
 }
 
 .page-footer {
-  display: flex;
-  justify-content: space-between;
+  background-color: #D9D9D9;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 .page-footer .social-media-links {
+  grid-row: 1/span 2;
+  grid-column: 1/span 2;
+  display: flex;
+}
+.page-footer .social-media-links ul li {
   float: left;
 }
 .page-footer .contact-info {
-  float: right;
+  grid-row: 1/span 3;
+  grid-column: 3/span 1;
+  display: flex;
+}
+.page-footer .contact-info ul {
+  right: 0;
+}
+.page-footer .legal-info {
+  grid-row: 3/span 1;
+  grid-column: 2/span 1;
+  display: flex;
+}
+.page-footer .legal-info ul li {
+  float: left;
+}
+.page-footer .copyright {
+  grid-row: 3/span 1;
+  grid-column: 1/span 1;
+  display: flex;
 }
 .page-footer ul {
   list-style-type: none;
