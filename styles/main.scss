@@ -11,6 +11,7 @@ body {
 
 h1 {
     margin-top: 40%;
+    background: var(--section-bg);
     border: 2px, solid rgb(180, 176, 176);
     border-radius: 20px;
     padding: 10px 20px;
@@ -21,6 +22,10 @@ h1 {
     font-size: 30px;
     background-color: rgb(180, 176, 176);
     width: 100mm;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
     
 }
 
@@ -41,7 +46,7 @@ p {
 
 
 h2 {
-    margin-top: 130%;
+    margin-top: 200%;
     border: 2px, solid rgb(180, 176, 176);
     border-radius: 20px;
     padding: 10px 20px;
