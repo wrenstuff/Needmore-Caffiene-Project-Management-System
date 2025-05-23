@@ -93,6 +93,7 @@
 }
 .page-footer .contact-info ul li {
   margin: 0 10px;
+  padding-top: 5px;
 }
 .page-footer .legal-info {
   grid-row: 3/span 1;
