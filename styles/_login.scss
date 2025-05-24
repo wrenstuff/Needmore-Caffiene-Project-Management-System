@@ -1,0 +1,60 @@
+@use 'color';
+
+$text-color: #333;
+$bg-image: url('/images/Blue_test.png');
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+    background: $bg-image no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.Login-Container {
+  background-color: color.$color-tertiary;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    max-width: 700px;
+}
+
+.Login-Form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid color.$color-link-text;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: color.$color-button-green;
+  color: rgb(8, 1, 1);
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  width: 100px;
+
+  font-size: 16px;
+  cursor: pointer;
+
+    &:hover {
+        background-color: color.$color-link-text;
+    }
+}
+
+h2 {
+  color: color.$color-dark-text;
+  text-align: center;
+}
