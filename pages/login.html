@@ -6,22 +6,24 @@
     <script type="module" src="../components/nav_bar.js"></script>
     <script type="module" src="../components/footer.js"></script>
     <link rel="stylesheet" href="/styles/main.css">
-    <title>Login</title>
+    <title>Log_in</title>
 </head>
-<body>
+<body class="login-page">
     <div class="Login-Container">
         <form class="Login-Form">
-            <h2>Login</h2>
+            <h2 class="header-text">Log in</h2>
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <input class="entrybox" type="text" id="username" name="username" required>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
-            <div class ="signup/ForgotPW">
-                <p>Don't have an account? <a href="signup.html">Sign up</a></p>
-                <span> | </span>
+            <input class="entrybox"  type="password" id="password" name="password" required>
+            
+            <div class ="extra-options">
+                <p><a href="sign_up.html">Sign up</a></p>
+                <button id="loginbutton" type="submit">Login</button>
                 <a href="forgot_password.html">Forgot Password?</a>
             </div>
 
+        </form>
+    </div>       
 </body>
 </html>
