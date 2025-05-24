@@ -188,6 +188,59 @@
   display: none;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: url("/images/Blue_test.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.Login-Container {
+  background-color: #A1A1A1;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 700px;
+  max-width: 700px;
+}
+
+.Login-Form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #4a90e2;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #54AC39;
+  color: rgb(8, 1, 1);
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  width: 100px;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #4a90e2;
+}
+
+h2 {
+  color: #000000;
+  text-align: center;
+}
+
 .wrapper {
   min-height: 90vh;
 }/*# sourceMappingURL=main.css.map */
