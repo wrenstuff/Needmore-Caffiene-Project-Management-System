@@ -129,7 +129,7 @@
   color: #000000;
 }
 
-body {
+.login-page {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -146,38 +146,50 @@ body {
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 700px;
+  width: 500px;
   max-width: 700px;
 }
-
-.Login-Form {
+.Login-Container .Login-Form {
   display: flex;
   flex-direction: column;
+  padding: 2rem;
 }
-
-input {
-  margin-bottom: 10px;
+.Login-Container .Login-Form .header-text {
+  color: #000000;
+  align-self: center;
+  padding-bottom: 5px;
+  font-size: 24px;
+}
+.Login-Container .Login-Form label {
+  padding: 5px;
+  color: #000000;
+}
+.Login-Container .Login-Form input {
+  margin-bottom: 15px;
   padding: 10px;
-  border: 1px solid #4a90e2;
-  border-radius: 5px;
+  border-radius: 50px;
+  width: auto;
+  height: 10px;
+  border: 1px solid #E6E6E6;
+  max-width: 500px;
   font-size: 16px;
 }
-
-button {
+.Login-Container .Login-Form .extra-options {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.Login-Container .Login-Form .extra-options #loginbutton {
   background-color: #54AC39;
   color: rgb(8, 1, 1);
   padding: 10px;
   border: none;
   border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   width: 100px;
   font-size: 16px;
   cursor: pointer;
 }
-button:hover {
-  background-color: #4a90e2;
-}
-
-h2 {
-  color: #000000;
-  text-align: center;
+.Login-Container .Login-Form .extra-options #loginbutton:hover {
+  background-color: #41862c;
 }/*# sourceMappingURL=main.css.map */
