@@ -11,18 +11,22 @@
 <body class="login-page">
     <div class="Login-Container">
         <form class="Login-Form">
+            <img src="/images/icon-placeholder.png" alt="icon-placeholder" class="placeholder">
             <h2 class="header-text">Log in</h2>
+            <!-- {put each in div for poisitoning and entry box for styiling those}-->
+             <div class= "username-entry">
             <label for="username">Username:</label>
             <input class="entrybox" type="text" id="username" name="username" required>
+            </div>
+            <!-- {put each in div for poisitoning and entry box for styiling those}-->
+             <div class="password-entry">
             <label for="password">Password:</label>
             <input class="entrybox"  type="password" id="password" name="password" required>
-            
-            <div class ="extra-options">
-                <p><a href="sign_up.html">Sign up</a></p>
-                <button id="loginbutton" type="submit">Login</button>
-                <a href="forgot_password.html">Forgot Password?</a>
             </div>
 
+            <a id="sign-up" href="sign_up.html">Sign up</a>
+            <button id="loginbutton" type="submit">Login</button>
+            <a id="forgot-password" href="forgot_password.html">Forgot Password?</a>
         </form>
     </div>       
 </body>
