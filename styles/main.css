@@ -127,4 +127,13 @@
 }
 .page-footer ul li a {
   color: #000000;
+}
+
+.faq-header {
+  text-orientation: sideways;
+}
+
+.wrapper {
+  height: auto;
+  width: 100vw;
 }/*# sourceMappingURL=main.css.map */
