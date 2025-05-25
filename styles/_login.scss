@@ -20,6 +20,7 @@ $bg-image: url('/images/Blue_test.png');
   border-radius: 10px;
   padding: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
   width: 500px;
   max-width: 700px;
 
@@ -62,12 +63,17 @@ $bg-image: url('/images/Blue_test.png');
     .entrybox {
       border-radius: 50px;
       background-color: color.$color-primary;
+      border: #333 solid 1px;
       height: 30px;
+      padding: 0 15px;
+      margin-left: 20px;
+      margin-right: 20px;
       width: auto;
+      outline: none;
     }
     //  username and password labels
     label {
-    
+    margin-left: 30px;
       grid-column: 1;
       color: color.$color-dark-text;
       
@@ -89,35 +95,33 @@ $bg-image: url('/images/Blue_test.png');
       grid-row: 4;
       grid-column: 1;
       justify-content: center;
-      margin-top: 20px;
-      padding: 10px;
+      margin-top: 27px;
+      margin-left: 30px;
+      padding: 5px;
       border: none;
       font-size: 16px;
       cursor: pointer;
     
     
-      &:hover {
-        background-color: darken(color.$color-secondary, 10%);
-      }
+     
     }
 
     #forgot-password {
       grid-row: 4;
       grid-column: 3;
       justify-content: center;
-      margin-left: 40px;
-      margin-top: 20px;
+      margin-left: 10px;
+      margin-top: 27px;
       padding: 5px;
       border: none;
       width: auto;
+      white-space: nowrap;
 
       font-size: 16px;
       cursor: pointer;
         
         
-      &:hover {
-        background-color: darken(color.$color-secondary, 10%);
-      }
+      
     }
 
     #loginbutton {
@@ -133,7 +137,7 @@ $bg-image: url('/images/Blue_test.png');
       border: none;
       border-radius: 60px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      width: 100px;
+      width: 80px;
         height: 40px;
       font-size: 16px;
       cursor: pointer;
