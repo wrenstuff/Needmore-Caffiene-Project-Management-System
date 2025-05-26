@@ -156,6 +156,7 @@
   width: 100%;
   justify-content: flex-start;
   align-items: center;
+  margin: 75px 0;
 }
 .faq-boxes comp-faq {
   display: flex;
