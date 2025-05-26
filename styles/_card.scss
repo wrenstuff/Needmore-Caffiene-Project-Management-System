@@ -1,0 +1,89 @@
+@use 'color';
+
+.card {
+
+    display: flex;
+
+    height: 250px;
+    width: 330px;
+
+    flex-direction: column;
+    align-items: center;
+
+    .notif {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+        top: 15px;
+        right: -165px;
+        background-color: color.$color-notification;
+
+        // For some reason you can't set the width and height to 30px
+        // so instead I had to set a min and max to ensure it's not
+        // elongated and it stays a circle
+        // weird but it works
+        min-height: 30px;
+        min-width: 30px;
+        max-height: 30px;
+        max-width: 30px;
+
+        border-radius: 50%;
+
+        color: color.$color-light-text;
+
+    }
+
+    .top {
+
+        height: 200px;
+        width: 330px;
+        box-shadow: 2px 2px 5px color.$color-tertiary;
+        background-color: color.$color-primary;
+        border-radius: 20px;
+
+        // The image sizing seems to be playing up and I can't figure out
+        // how to fix it. When I remove the height of .card it works, 
+        // but then the card height is not fixed and it expands.
+        // I'm hoping this doesn't cause too many issues in the future
+        // If it does, I will have to revisit this and find a better solution.
+        img {
+
+            border-radius: 20px;
+
+            height: 200px;
+            width: 330px;
+
+        }
+
+    }
+
+    .bottom {
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        height: 50px;
+        width: 240px;
+        background-color: color.$color-tertiary;
+        border-radius: 0 0 20px 20px;
+        border: 1px solid black;
+        border-top: none;
+
+        .name,
+        .create {
+
+            font-size: 16px;
+            font-weight: 500;
+            color: color.$color-dark-text;
+            margin-left: 10px;
+
+        }
+
+    }
+
+}
