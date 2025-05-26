@@ -7,6 +7,13 @@
     <script type="module" src="../components/footer.js"></script>
     <link rel="stylesheet" href="/styles/main.css">
     <title>Log_in</title>
+    
+    <!-- Temporary place for the button redirect to dashboard -->
+    <script>
+        document.getElementById("loginbutton").addEventListener("click", function() {
+            window.location.href = "dashboard.html"; // Replace with the actual path to your dashboard
+        });
+    </script>
 </head>
 <body class="login-page">
     <div class="Login-Container">
@@ -25,8 +32,8 @@
             </div>
 
             <p id="sign-up">No account?&nbsp  <a href="sign_up.html"> Sign up</a></p>
-            <button id="loginbutton" type="submit">Login</button>
-            
+            <!-- <button id="loginbutton" type="submit">Login</button> -->
+            <button id="loginbutton" type="button">Login</button>
             <a id="forgot-password" href="forgot_password.html">Forgot Password?</a>
         </form>
     </div>       
