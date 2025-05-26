@@ -21,7 +21,7 @@ $bg-image: url('/images/Blue_test.png');
     padding: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
-    height: 420px;
+    height: 440px;
     width: 550px;
     max-width: 700px;
 
@@ -114,8 +114,9 @@ $bg-image: url('/images/Blue_test.png');
             grid-row: 7;
             grid-column: 1;
             justify-content: left;
+            align-self: center;
             margin-top: 10px;
-            margin-left: 45px;
+            margin-left: 30px;
             padding: 5px;
             border: none;
             font-size: 16px;
@@ -123,14 +124,15 @@ $bg-image: url('/images/Blue_test.png');
         }
         
         .checkbox-entry{
-            margin-top: 15px;
-            margin-left: 45px;
+            margin-top: 3px;
+            
             display: flex;
             grid-column: 1 / span 3;
             grid-row: 6;
             padding: 5px;
             color: color.$color-dark-text;
             align-items: center;
+            justify-content: center;
             
             ;
             #terms{
@@ -150,12 +152,10 @@ $bg-image: url('/images/Blue_test.png');
 
         #signup-button {
             display: grid;
-            grid-column: 3;
-            grid-row: 6;
+            grid-column: 2;
+            grid-row: 7;
             background-color: color.$color-button-green;
             color: rgb(8, 1, 1);
-            margin-top: 15px;
-            margin-left: 10px;
             padding: 10px;
             border: none;
             border-radius: 60px;
@@ -164,7 +164,10 @@ $bg-image: url('/images/Blue_test.png');
             height: 40px;
             font-size: 16px;
             cursor: pointer;
-            justify-self: left;
+            margin-top: 10px;
+            justify-self: center;
+            align-self: center;
+            
 
             &:hover {
                 background-color: darken(color.$color-button-green, 10%);
