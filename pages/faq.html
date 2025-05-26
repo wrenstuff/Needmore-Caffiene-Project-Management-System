@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="../components/nav_bar.js"></script>
     <script type="module" src="../components/footer.js"></script>
+    <script type="module" src="../components/faq.js"></script>
     <link rel="stylesheet" href="../styles/main.css">
     <title>Frequently Asked Questions</title>
 </head>
+
 <body>
     <comp-nav-bar></comp-nav-bar>
-    <h1>Frequently Asked Questions</h1>
+    <div class="wrapper">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h1>FAQ</h1>
+            </div>
+            <div class="faq-boxes">
+
+                <comp-faq></comp-faq>
+                <comp-faq></comp-faq>
+                <comp-faq></comp-faq>
+                <comp-faq></comp-faq>
+                <comp-faq></comp-faq>
+                <comp-faq></comp-faq>
+
+            </div>
+        </div>
+
+
+    </div>
     <comp-footer></comp-footer>
 </body>
+
 </html>

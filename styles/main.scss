@@ -2,3 +2,10 @@
 @use 'nav-bar';
 @use 'footer';
 @use 'card';
+@use 'faq';
+
+.wrapper {
+
+    min-height: 90vh;
+
+}
