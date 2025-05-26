@@ -1,0 +1,144 @@
+@use 'color';
+
+$text-color: #333;
+$bg-image: url('/images/Blue_test.png');
+
+.login-page {
+margin: 0;
+padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+background: $bg-image no-repeat center center fixed;
+background-size: cover;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+}
+
+.login-container {
+background-color: color.$color-tertiary;
+border-radius: 10px;
+padding: 5px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+width: 550px;
+max-width: 700px;
+
+
+
+.login-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 70px auto auto auto;
+    padding: 1rem;
+
+  .header-text {
+  
+    grid-column: 2;
+    grid-row: 1;
+    color: color.$color-dark-text;
+    align-self: center;
+    justify-self: center;
+    padding-bottom: 5px;
+    font-size: 24px;
+  }
+
+  .username-entry {
+    display: grid;
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    padding: 5px;
+    color: color.$color-dark-text;
+  }
+
+  .password-entry {
+    display: grid;
+    grid-column: 1 / span 3;
+    grid-row: 3;
+    padding: 5px;
+    color: color.$color-dark-text;
+  }
+
+  .entry-box {
+    border-radius: 50px;
+    background-color: color.$color-primary;
+    border: #333 solid 1px;
+    height: 30px;
+    padding: 0 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: auto;
+    outline: none;
+  }
+  //  username and password labels
+  label {
+    margin-left: 30px;
+    grid-column: 1;
+    color: color.$color-dark-text;
+    
+  }
+  //image placeholder
+  .placeholder{
+    grid-column: 1/ span 2;
+    grid-row: 1;
+    height: 80px;
+    width: 100px;
+    justify-self: center;
+    align-self: center;
+    padding-right: 100px;
+    margin-bottom: 20px;
+  }
+  
+  #sign-up {
+    display: flex;
+    grid-row: 4;
+    grid-column: 1;
+    justify-content: center;
+    margin-top: 27px;
+    margin-left: 10px;
+    padding: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  #forgot-password {
+    grid-row: 4;
+    grid-column: 3;
+    justify-content: center;
+    margin-left: 10px;
+    margin-top: 27px;
+    padding: 5px;
+    border: none;
+    width: auto;
+    white-space: nowrap;
+
+    font-size: 16px;
+    cursor: pointer;
+      
+      
+    
+  }
+
+  #login-button {
+    display: grid;
+    grid-column: 2;
+    grid-row: 4;
+    background-color: color.$color-button-green;
+    color: rgb(8, 1, 1);
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 60px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    justify-self: center;
+    &:hover {
+      background-color: darken(color.$color-button-green, 10%);
+    }
+  }
+}
+}
