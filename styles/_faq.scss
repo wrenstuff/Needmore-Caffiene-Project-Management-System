@@ -7,28 +7,25 @@
     grid-template-columns: 10% 90%;
     grid-template-rows: 100%;
 
-    .faq-header h1{
+    .faq-header {
 
         grid-column: 1;
 
         display: flex;
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-start;
+        padding-top: 50px;
 
-        height: 100%;
-        width: 100%;
+        h1 {
 
-        text-align: center;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            font-size: 128pt;
+            text-align: center;
+            margin-left: 50%;
 
-        font-size: 128pt;
+        }
 
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-
-        position: fixed;
-        right: 40%;
-        top: 20%;
-    
     }
 
 }
@@ -40,7 +37,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     comp-faq {
@@ -56,7 +53,7 @@
         background-color: color.$color-primary;
         margin: 10px;
         border-radius: 20px;
-        width: 80%;
+        width: 70vw;
         justify-content: center;
         align-items: center;
         flex-direction: column;
@@ -77,8 +74,14 @@
         .answer {
 
             padding: 20px 75px;
-            
+
             // display: none;
+
+        }
+
+        .hidden {
+
+            display: none;
 
         }
 
