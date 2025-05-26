@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="../components/nav_bar.js"></script>
     <script type="module" src="../components/footer.js"></script>
     <link rel="stylesheet" href="/styles/main.css">
-    <title>Log_in</title>
-    
-    <!-- Temporary place for the button redirect to dashboard -->
-    <script>
-        document.getElementById("loginbutton").addEventListener("click", function() {
-            window.location.href = "dashboard.html"; // Replace with the actual path to your dashboard
-        });
-    </script>
-</head>
-<body class="login-page">
-    <div class="Login-Container">
-        <form class="Login-Form">
-            <img src="/images/icon-placeholder.png" alt="icon-placeholder" class="placeholder">
-            <h2 class="header-text">Log in</h2>
-            <!-- {put each in div for poisitoning and entry box for styiling those}-->
-             <div class= "username-entry">
-            <label for="username">Email / Username:</label>
-            <input class="entrybox" type="text" id="username" name="username" placeholder="Enter your Email or Username" required>
-            </div>
-            <!-- {put each in div for poisitoning and entry box for styiling those}-->
-             <div class="password-entry">
-            <label for="password">Password:</label>
-            <input class="entrybox"  type="password" id="password" name="password" placeholder="Enter your Password" required>
-            </div>
+    <title>Log in</title>
 
-            <p id="sign-up">No account?&nbsp  <a href="sign_up.html"> Sign up</a></p>
-            <!-- <button id="loginbutton" type="submit">Login</button> -->
-            <button id="loginbutton" type="button">Login</button>
-            <a id="forgot-password" href="forgot_password.html">Forgot Password?</a>
-        </form>
-    </div>       
+
+</head>
+
+<body class="login-page">
+    <div class=login-page>
+        <div class="login-container">
+            <form class="login-form">
+                <img src="/images/icon-placeholder.png" alt="icon-placeholder" class="placeholder">
+                <h2 class="header-text">Log in</h2>
+                <!-- {put each in div for poisitoning and entry box for styiling those}-->
+                <div class="username-entry">
+                    <label for="username">Email / Username:</label>
+                    <input class="entry-box" type="text" id="username" name="username"
+                        placeholder="Enter your Email or Username" required>
+                </div>
+                <!-- {put each in div for poisitoning and entry box for styiling those}-->
+                <div class="password-entry">
+                    <label for="password">Password:</label>
+                    <input class="entry-box" type="password" id="password" name="password"
+                        placeholder="Enter your Password" required>
+                </div>
+
+                <p id="sign-up">No account?&nbsp <a href="sign_up.html"> Sign up</a></p>
+                <!-- <button id="loginbutton" type="submit">Login</button> -->
+                <button id="login-button" type="button">Login</button>
+                <!-- Temporary place for the button redirect to dashboard -->
+                <script>
+                    document.getElementById("login-button").addEventListener("click", function () {
+                        window.location.href = "dashboard.html"; // Replace with the actual path to your dashboard
+                    });
+                </script>
+                <a id="forgot-password" href="forgot_password.html">Forgot Password?</a>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>

@@ -15,7 +15,7 @@ justify-content: center;
 height: 100vh;
 }
 
-.Login-Container {
+.login-container {
 background-color: color.$color-tertiary;
 border-radius: 10px;
 padding: 5px;
@@ -26,7 +26,7 @@ max-width: 700px;
 
 
 
-.Login-Form {
+.login-form {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 70px auto auto auto;
@@ -37,7 +37,7 @@ max-width: 700px;
     grid-column: 2;
     grid-row: 1;
     color: color.$color-dark-text;
-      align-self: center;
+    align-self: center;
     justify-self: center;
     padding-bottom: 5px;
     font-size: 24px;
@@ -59,7 +59,7 @@ max-width: 700px;
     color: color.$color-dark-text;
   }
 
-  .entrybox {
+  .entry-box {
     border-radius: 50px;
     background-color: color.$color-primary;
     border: #333 solid 1px;
@@ -81,7 +81,6 @@ max-width: 700px;
   .placeholder{
     grid-column: 1/ span 2;
     grid-row: 1;
-
     height: 80px;
     width: 100px;
     justify-self: center;
@@ -101,9 +100,6 @@ max-width: 700px;
     border: none;
     font-size: 16px;
     cursor: pointer;
-  
-  
-    
   }
 
   #forgot-password {
@@ -124,12 +120,10 @@ max-width: 700px;
     
   }
 
-  #loginbutton {
+  #login-button {
     display: grid;
     grid-column: 2;
     grid-row: 4;
-    
-      
     background-color: color.$color-button-green;
     color: rgb(8, 1, 1);
     margin-top: 20px;
@@ -141,9 +135,7 @@ max-width: 700px;
     height: 40px;
     font-size: 16px;
     cursor: pointer;
-
     justify-self: center;
-
     &:hover {
       background-color: darken(color.$color-button-green, 10%);
     }
