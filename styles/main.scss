@@ -5,20 +5,26 @@
 
 
 body {
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     background-color: #ffffff;
+    padding: 0 20px;
 }
 
-h1 {
+section {
+    
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 h2{
     margin-top: 40%;
     background: var(--section-bg);
     border: 2px, solid rgb(180, 176, 176);
-    border-radius: 20px;
+    border-radius: 25px;
     padding: 10px 20px;
     margin: 20px auto;
-    display: center;
     color: #000000;
-    text-align: center;
     font-size: 30px;
     background-color: rgb(180, 176, 176);
     width: 100mm;
@@ -26,15 +32,11 @@ h1 {
     border-bottom-right-radius: 20px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    
+    text-align: center;
 }
 
-p {
-    text-align: left;
-    font-size: 24px;
-    line-height: 30px;
-}
-.horizontal-line {
+
+horizontal-line {
     position: fixed;
     top: 27%;
     left: 0;
@@ -44,17 +46,35 @@ p {
     z-index: 999;
 }
 
-
-h2 {
-    margin-top: 200%;
-    border: 2px, solid rgb(180, 176, 176);
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin: 20px auto;
-    display: center;
-    color: #000000;
-    text-align: center;
-    font-size: 30px;
-    background-color: rgb(180, 176, 176);
-    width: 100mm;
+content-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: left;
+    padding: 0 20px;
 }
+
+content-row.reverse {
+    flex-direction: row-reverse;
+}
+text {
+    flex: 1;
+    min-width: 250px;
+}
+
+image {
+    flex: 1;
+    text-align: center;
+}
+
+image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+
