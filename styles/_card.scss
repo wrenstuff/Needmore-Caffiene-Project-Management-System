@@ -53,6 +53,8 @@
             width: 100%;
             border-radius: 50%;
             display: flex;
+            pointer-events: none;
+            user-select: none;
 
         }
 

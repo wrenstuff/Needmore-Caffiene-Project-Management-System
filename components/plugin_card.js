@@ -10,7 +10,7 @@ class Plugin_Card extends HTMLElement {
             <div class="project card" id="${uniqueId}">
                 <div class="add">
                     <img src="../images/icons8-plus-48.png" alt="" class="inactive">
-                    <img src="../images/icons8-check-48.png" alt="" class="active">
+                    <img src="../images/icons8-check-48.png" alt="" class="active hidden">
                 </div>
                 <div class="top">
                     <img src="../images/Blue_test.png" alt="">
