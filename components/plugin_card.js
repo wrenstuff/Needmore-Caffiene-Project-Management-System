@@ -3,13 +3,33 @@ class Plugin_Card extends HTMLElement {
         super();
     }
 
-connectedCallback() {
+    connectedCallback() {
+        const uniqueId = Date.now().toString(36) + Math.random().toString(36).substring(2);
 
-    // stylesheet for the component can be found at styles/card.scss
-    this.innerHTML = 
-    `
-        <h1>PLUGIN CARD (MODIFY IN plugin-card.js)</h1>
-    `
+        this.innerHTML = `
+            <div class="project card" id="${uniqueId}">
+                <div class="add">
+                    <img src="../images/icons8-plus-48.png" alt="" class="inactive">
+                    <img src="../images/icons8-check-48.png" alt="" class="active">
+                </div>
+                <div class="top">
+                    <img src="../images/Blue_test.png" alt="">
+                </div>
+                <div class="bottom">
+                    <p class="name">Template: NAME</p>
+                    <p class="create">Created By: NAME</p>
+                </div>
+            </div>
+        `;
+
+        const addBtn = this.querySelector(`#${uniqueId} .add`);
+        const inactiveImg = addBtn.querySelector('.inactive');
+        const activeImg = addBtn.querySelector('.active');
+
+        addBtn.addEventListener('click', () => {
+            inactiveImg.classList.toggle('hidden');
+            activeImg.classList.toggle('hidden');
+        });
     }
 
 }
