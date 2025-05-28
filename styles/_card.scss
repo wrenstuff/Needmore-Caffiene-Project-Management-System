@@ -10,28 +10,36 @@
     flex-direction: column;
     align-items: center;
 
-    .add {
+    // For some reason you can't set the width and height to 30px
+    // so instead I had to set a min and max to ensure it's not
+    // elongated and it stays a circle
+    // weird but it works
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        position: relative;
-        top: 215px;
-        right: -120px;
-        background-color: color.$color-add-inactive;
-
-        // For some reason you can't set the width and height to 30px
-        // so instead I had to set a min and max to ensure it's not
-        // elongated and it stays a circle
-        // weird but it works
-        min-height: 35px;
-        min-width: 35px;
-        max-height: 35px;
-        max-width: 35px;
+    .notif {
+        top: 15px;
+        right: -165px;
+        background-color: color.$color-notification;
+        min-height: 30px;
+        min-width: 30px;
+        max-height: 30px;
+        max-width: 30px;
 
         border-radius: 50%;
-        border: 1px solid black;
+
+        color: color.$color-light-text;
+
+        .add {
+            top: 215px;
+            right: -120px;
+            background-color: color.$color-add-inactive;
+            min-height: 35px;
+            min-width: 35px;
+            max-height: 35px;
+            max-width: 35px;
+
+            border-radius: 50%;
+            border: 1px solid black;
+        }
 
         .active {
 
@@ -63,6 +71,14 @@
             display: none;
 
         }
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+
+
 
     }
 
