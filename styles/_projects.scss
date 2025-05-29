@@ -61,8 +61,9 @@
 }
 .project-list{
     grid-row: 3;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1em;
     padding: 1em;
     margin: 0 auto;
@@ -95,9 +96,10 @@
 }
 
 .all-project-list{
-   display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     grid-row: 5;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1em;
     padding: 1em;
     margin: 0 auto;
@@ -109,6 +111,11 @@
     grid-row: 6;
     z-index: 2;
     margin-top: 2em;
+}
+
+comp-project-card{
+    padding: 2em 5em 2em 5em;
+    
 }
 
 

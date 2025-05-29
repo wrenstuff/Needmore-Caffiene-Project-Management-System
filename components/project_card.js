@@ -18,7 +18,7 @@ class Project_Card extends HTMLElement {
             </div>
             <div class="bottom">
                 <!-- Project Name -->
-                <p class="name">Project: NAME</p>
+                <p class="name">Project: ${uniqueId}</p>
                 <!-- Owned By -->
                 <p class="create">Owned By: NAME</p>
             </div>
