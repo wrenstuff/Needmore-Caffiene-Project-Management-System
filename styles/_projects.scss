@@ -1,0 +1,114 @@
+@use 'color';
+
+
+.main-content {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+}
+
+.title-container {
+    grid-row: 1;
+    display: grid;
+    padding: 0.5em;
+    margin-top: 40px;
+    z-index: 2;
+    
+
+    .title {
+        display: inline-block;
+        font-size: 3em;
+        font-weight: bold;
+        color: color.$color-dark-text;
+        text-align: center;
+        width: 425px;
+        height: 50px;
+        background-color: #ccc;
+        border-radius: 20px;
+        padding: 0.25em 0.75em;
+        margin: 0 auto;
+        z-index: 2;
+        
+    }
+
+}
+
+
+
+.recent-projects-title {
+    grid-row: 2;
+    display: grid;
+    background-color: #cccccc00;
+    border-top: 1px solid #050202;
+    margin-top: -8.5px;
+    z-index: 1;
+    .title {
+        display: inline-block;
+        font-size: 2em;
+        font-weight: lighter;
+        color: color.$color-dark-text;
+        text-align: center;
+        width: 410px;
+        height: 50px;
+        background-color: #ccc;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        padding: 0.25em 0.75em;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+}
+.project-list{
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
+    padding: 1em;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.all-projects-title {
+    grid-row: 4;
+    display: grid;
+    background-color: #cccccc00;
+    border-top: 1px solid #050202;
+    margin-top: 40px;
+    z-index: 1;
+    .title {
+        display: inline-block;
+        font-size: 2em;
+        font-weight: lighter;
+        color: color.$color-dark-text;
+        text-align: center;
+        width: 410px;
+        height: 50px;
+        background-color: #ccc;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        padding: 0.25em 0.75em;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.all-project-list{
+   display: grid;
+    grid-row: 5;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
+    padding: 1em;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.footer-spacer {
+    display: grid;
+    grid-row: 6;
+    z-index: 2;
+    margin-top: 2em;
+}
+
+

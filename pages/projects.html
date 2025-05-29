@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="../components/nav_bar.js"></script>
     <script type="module" src="../components/footer.js"></script>
+    <script type="module" src="../components/project_card.js"></script>
     <link rel="stylesheet" href="../styles/main.css">
     <title>Projects</title>
 </head>
+
 <body>
     <comp-nav-bar></comp-nav-bar>
-    <h1>Projects</h1>
-    <comp-footer></comp-footer>
+    <main class="main-content">
+
+        <div class="title-container">
+            <span class="title">Projects</span>
+        </div>
+        <div class="recent-projects-title">
+            <span class="title">Recent Projects</span>
+        </div>
+        <!-- Example of a project card component -->
+        <div class="project-list">
+            <comp-project-card title="Project one" description="This is a description of project one.">
+            </comp-project-card>
+        </div>
+        <div class="all-projects-title">
+            <span class="title">All Projects</span>
+        </div>
+
+          <div class="all-project-list">
+            <comp-project-card title="Project one" description="This is a description of project one.">
+            </comp-project-card>
+        </div>
+    </main>
+    <div class="footer-spacer">
+        <comp-footer></comp-footer>
+    </div>
+        
+    
 </body>
+
 </html>
