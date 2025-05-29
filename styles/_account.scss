@@ -1,0 +1,18 @@
+@use 'color';
+@use 'slider';
+
+.settings {
+
+    display: block;
+    height: auto;
+    width: 100%;
+    background-color: color.$color-primary;
+
+    .security {
+
+        width: 80%;
+        background-color: color.$color-tertiary;
+
+    }
+
+}
