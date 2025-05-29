@@ -11,34 +11,6 @@ body {
     font-size: small;
 }
 
-section {
-    
-    padding: 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-h1, h2 {
-    margin-top: 40%;
-    background: var(--section-bg);
-    border: 2px solid rgb(180, 176, 176);
-    border-radius: 0 0 20px 20px;
-    grid-row: 2 / 4;
-    grid-row: 1;
-    padding: 10px 20px;
-    margin: 5px;
-    color: #000000;
-    font-size: 30px;
-    background-color: rgb(180, 176, 176);
-    width: 100mm;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    text-align: center;
-}
-
-
 grid-layout {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -50,44 +22,97 @@ grid-layout {
 }
 
 
-horizontal-line {
-    position: fixed;
-    top: 27%;
-    left: 0;
-    width: 100vw;
-    height: 2px;
-    background-color: #000000;
-    z-index: 999;
+.history-header {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-content-row {
+.goals-header {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -40px;
+}
+
+.history-title {
+    font-size: 2rem;
+    font-weight: lighter;
+    background-color: rgb(218, 218, 218);
+    padding: 10px 100px;
+    border-radius: 0 0 20px 20px;
+    display: inline-block;
+    max-width: 400px;
+}
+.goals-title {
+    font-size: 2rem;
+    font-weight: lighter;
+    background-color: rgb(218, 218, 218);
+    padding: 10px 100px;
+    border-radius: 0 0 20px 20px;
+    display: inline-block;
+    max-width: 400px;
+}
+
+.history-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 30px;
     flex-wrap: wrap;
-    gap: 20px;
-    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto 40px;
     padding: 0 20px;
+    margin-right: 8%;
 }
 
-content-row.reverse {
+.goals-content {
+    display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    margin-right: 8%;
 }
-text {
+
+.history-image {
+    max-width: 350px;
+    width: 100%;
+    border-radius: 10px;
+    margin-left: -20%;
+}
+
+.goals-image {
+    max-width: 350px;
+    width: 100%;
+    border-radius: 10px;
+    margin-left: -20%;
+}
+
+.history-text {
     flex: 1;
-    min-width: 250px;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    color: 333;
+    font-size: medium;
 }
 
-.Our-History {
-        text-align: right;
-        grid-column: 2 / 4;
-        grid-row: 2;
-        padding: 10px;
-    }
-
-hr {
-  border: none;
-  border-top: 2px solid #bbb;
-  margin: 3rem auto;
-  width: 80%;
+.goals-text {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    color: 333;
+    font-size: medium;
+    margin-left: -190px;
+    max-width: 800px;
 }
+
+.divider {
+    margin: 40px auto;
+    width: 200%;
+    border: none;
+    border-top: 1px solid #000000;
+}
+
