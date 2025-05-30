@@ -1,0 +1,19 @@
+@use 'cleanse';
+@use 'nav-bar';
+@use 'footer';
+@use 'card';
+@use 'faq';
+@use 'login';
+<<<<<<< Updated upstream
+
+=======
+@use 'signup';
+@use 'projects';
+@use 'membership';
+>>>>>>> Stashed changes
+.wrapper {
+
+    min-height: 90vh;
+
+}
+

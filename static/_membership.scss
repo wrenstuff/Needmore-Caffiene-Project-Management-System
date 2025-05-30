@@ -1,0 +1,187 @@
+// -- memberships.scss -- //
+
+// Responsive media queries
+
+// Screen sizing
+@media (max-width: 768px) {
+  :root {
+    --plan-width: 90%;
+    --plan-height: auto;
+  }
+
+  .free_plan,
+  .standard_plan,
+  .premium_plan {
+    width: 100%;
+    max-width: 420px;
+
+    .selection_header .price {
+      font-size: 1.6rem;
+
+      &::before {
+        font-size: 0.8rem;
+      }
+    }
+
+    .sign_up {
+      font-size: 0.95rem;
+    }
+  }
+
+  .main h1 {
+    font-size: 1.8rem;
+  }
+}
+  h1, p, .description, .price {
+  user-select: none;    
+  pointer-events: none;  
+  }
+
+// Card hover
+:root {
+  --plan-width: 380px;
+  --plan-height: 680px;
+  --primary-color: #007bff;
+  --hover-color: #0056b3;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Open Sans', 'Poppins', 'Roboto', sans-serif;
+  background: #f8f8f8;
+}
+
+// Main content
+.main {
+  position: relative;
+  padding: 2rem 1rem;
+  text-align: center;
+  overflow: hidden;
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+   
+  }
+}
+
+// Plan container
+.plans {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+// Plan card
+.free_plan,
+.standard_plan,
+.premium_plan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: var(--plan-width);
+  min-height: var(--plan-height);
+
+  .selection_header {
+    text-align: center;
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #707070;
+      font-size: 2rem;
+      margin: 1rem 0;
+
+      &::before {
+        content: "$";
+        vertical-align: super;
+        font-size: 1rem;
+        margin-right: 2px;
+      }
+    }
+
+    .description {
+      font-size: 0.95rem;
+      color: #666;
+    }
+  }
+
+  .benefits,
+  .features {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 1rem 0;
+    width: 100%;
+    flex-grow: 1;
+
+    li {
+      position: relative;
+      font-size: 1rem;
+      &:not(:last-child)::after {
+        content: "";
+        display: block;
+        height: 1px;
+        background-color: #ccc;
+        margin: 10px 0;
+    }
+  }
+
+  }
+ // Divider
+  .divider {
+    height: 1px;
+    width: 100%;
+    background-color: #ddd;
+    margin: 0.5rem 0;
+  }
+ 
+ // Sign up button (might change to free trial)
+    .sign_up {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 0.6rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+
+      &:hover {
+        background-color: var(--hover-color);
+        transform: scale(1.05);
+      }
+    }
+  }
