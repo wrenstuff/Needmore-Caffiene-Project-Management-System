@@ -3,15 +3,17 @@
 
 .settings {
 
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: auto;
     width: 100%;
-    background-color: color.$color-primary;
 
-    .security {
+    .security, .preferences {
 
         width: 80%;
-        background-color: color.$color-tertiary;
+        background-color: color.$color-primary;
+        margin: 10px;
 
     }
 
