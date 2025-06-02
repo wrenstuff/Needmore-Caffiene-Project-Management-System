@@ -9,12 +9,119 @@
     height: auto;
     width: 100%;
 
-    .security, .preferences {
+    .security,
+    .preferences {
 
         width: 80%;
         background-color: color.$color-primary;
         margin: 10px;
 
+        .setting-box {
+
+            background-color: color.$color-secondary;
+            padding: 10px;
+
+        }
+
     }
 
 }
+
+#set-email form {
+
+    display: grid;
+
+    grid-template-rows: repeat(3, calc(100% / 3));
+    grid-template-columns: repeat(5, calc(100% / 5));
+
+    .p-email {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .p-emnot {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .p-tanot {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .in-email {
+        grid-column: 2 / 3;
+        grid-row: 1;
+    }
+
+    .swt-emnot {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .swt-tanot {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .p-emnot-t {
+        grid-column: 3/4;
+        grid-row: 2;
+    }
+
+    .p-tanot-t {
+        grid-column: 3/4;
+        grid-row: 3;
+    }
+
+    .submit {
+        grid-column: 5;
+        grid-row: 3;
+    }
+
+}
+
+#set-password form {
+
+    display: grid;
+
+    grid-template-rows: repeat(3, calc(100% / 3));
+    grid-template-columns: repeat(6, calc(100% / 6));
+
+    .p-newpass {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .p-conpass {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .p-reqemail {
+        grid-column: 1/2;
+        grid-row: 3;
+    }
+
+    .in-newpass {
+        grid-column: 2 / 4;
+        grid-row: 1;
+    }
+
+    .in-conpass {
+        grid-column: 2 / 4;
+        grid-row: 2;
+    }
+
+    .swt-reqemail {
+        grid-column: 3;
+        grid-row: 3;
+    }
+
+    .submit {
+        grid-column: 6;
+        grid-row: 3;
+    }
+
+}
+
