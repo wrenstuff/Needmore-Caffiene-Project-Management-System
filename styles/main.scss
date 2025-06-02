@@ -6,6 +6,7 @@
 @use 'login';
 @use 'signup';
 @use 'projects';
+@use 'dashboard':
 .wrapper {
 
     min-height: 90vh;

@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script type="module" src="../components/nav_bar.js"></script>
     <script type="module" src="../components/footer.js"></script>
-    <script type="module" src="../components/plugin_card.js"></script>
+      <script type="module" src="../components/project-card.js"></script>
     <link rel="stylesheet" href="../styles/main.css">
-    <title>Dashboard</title>
-</head>
+    <title>Marketplace</title>
+  </head>
+
 <body>
-    <comp-nav-bar></comp-nav-bar>
-    <h1>Dashboard</h1>
-    <comp-footer></comp-footer>
+  <!-- Navigation Bar -->
+  <comp-nav-bar></comp-nav-bar>
+
+  <!-- Main Content -->
+  <div class="main">
+    <!-- News banner -->
+    <div class="news-banner">
+      <h1>Latest News</h1>
+      <p>(Click for more)</p>
+    </div>
+
+    <!-- Recent Projects -->
+    <section class="section">
+      <h2>Recent Projects</h2>
+      <div class="grid" id="recent-projects-grid"></div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section">
+      <h2>Projects</h2>
+      <div class="grid" id="projects-grid"></div>
+    </section>
+
+  <!-- Footer -->
+  <comp-footer></comp-footer>
 </body>
 </html>
