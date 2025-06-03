@@ -125,3 +125,342 @@
 
 }
 
+#set-privacy form {
+
+    display: grid;
+
+    grid-template-rows: repeat(3, calc(100% / 3));
+    grid-template-columns: repeat(4, calc(100% / 4));
+
+    .p-functionality {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .p-analytics {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .p-advertisement {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .swt-functionality {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .swt-analytics {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .swt-advertisement {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .submit {
+        grid-column: 4;
+        grid-row: 3;
+    }
+
+}
+
+#set-visibility form {
+
+    display: grid;
+
+    grid-template-rows: repeat(3, calc(100% / 3));
+    grid-template-columns: repeat(7, calc(100% / 7));
+
+    .p-fname {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .p-uname {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .p-joba {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .p-jobb {
+        grid-column: 5;
+        grid-row: 1;
+    }
+
+    .p-organisation {
+        grid-column: 5;
+        grid-row: 2;
+    }
+
+    .in-fname {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .in-uname {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .in-joba {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .in-jobb {
+        grid-column: 6;
+        grid-row: 1;
+    }
+
+    .in-organisation {
+        grid-column: 6;
+        grid-row: 2;
+    }
+
+    .drp-fname {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .drp-uname {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    .drp-joba {
+        grid-column: 3;
+        grid-row: 3;
+    }
+
+    .drp-jobb {
+        grid-column: 7;
+        grid-row: 1;
+    }
+
+    .drp-organisation {
+        grid-column: 7;
+        grid-row: 2;
+    }
+
+    .submit {
+        grid-column: 7;
+        grid-row: 3;
+    }
+
+}
+
+#set-connected-apps form {
+
+    display: grid;
+
+    grid-template-rows: repeat(4, calc(100% / 4));
+    grid-template-columns: repeat(7, calc(100% / 7));
+
+    .p-github {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .p-facebook {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .p-google {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .p-youtube {
+        grid-column: 4;
+        grid-row: 1;
+    }
+
+    .p-twitter {
+        grid-column: 5;
+        grid-row: 1;
+    }
+
+    .p-instagram {
+        grid-column: 6;
+        grid-row: 1;
+    }
+
+    .p-linkedin {
+        grid-column: 7;
+        grid-row: 1;
+    }
+
+    .imglnk-github {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .imglnk-facebook {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .imglnk-google {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    .imglnk-youtube {
+        grid-column: 4;
+        grid-row: 2;
+    }
+
+    .imglnk-twitter {
+        grid-column: 5;
+        grid-row: 2;
+    }
+
+    .imglnk-instagram {
+        grid-column: 6;
+        grid-row: 2;
+    }
+
+    .imglnk-linkedin {
+        grid-column: 7;
+        grid-row: 2;
+    }
+
+    .p-githublinked {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .p-facebooklinked {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .p-googlelinked {
+        grid-column: 3;
+        grid-row: 3;
+    }
+
+    .p-youtubelinked {
+        grid-column: 4;
+        grid-row: 3;
+    }
+
+    .p-twitterlinked {
+        grid-column: 5;
+        grid-row: 3;
+    }
+
+    .p-instagramlinked {
+        grid-column: 6;
+        grid-row: 3;
+    }
+
+    .p-linkedinlinked {
+        grid-column: 7;
+        grid-row: 3;
+    }
+
+    .submit {
+        grid-column: 7;
+        grid-row: 4;
+    }
+
+}
+
+#set-preferences form {
+
+    display: grid;
+
+    grid-template-rows: repeat(3, calc(100% / 3));
+    grid-template-columns: repeat(4, calc(100% / 4));
+
+    .p-selectlang {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .p-selecttime {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .drp-selectlang {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .drp-selecttime {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .submit {
+        grid-column: 4;
+        grid-row: 3;
+    }
+
+}
+
+#set-marketplace form {
+
+    display: grid;
+
+    grid-template-rows: repeat(3, calc(100% / 3));
+    grid-template-columns: repeat(5, calc(100% / 5));
+
+    .p-marketplaceuname {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .p-contactvis {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .p-statustrust {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .p-marketrate {
+        grid-column: 4;
+        grid-row: 1;
+    }
+
+    .p-marketplaceunamename {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .swt-contactvis {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .p-statustrusttrust {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .p-marketraterate {
+        grid-column: 5;
+        grid-row: 1;
+    }
+
+    .submit {
+        grid-column: 5;
+        grid-row: 3;
+    }
+
+}
