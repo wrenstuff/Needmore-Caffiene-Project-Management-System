@@ -1,30 +1,113 @@
 @use 'color';
 @use 'slider';
 
+.profile-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .profile {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 50%;
+        background-color: color.$color-secondary;
+        margin-top: 50px;
+        border-radius: 50px;
+        box-shadow: 0 4px 4px color.$color-shadow;
+        
+    
+        img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            margin: 20px;
+        }
+    
+        .text {
+    
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+    
+            .job {
+    
+                padding: 10px;
+    
+            }
+    
+        }
+    
+    }
+}
+
+
+.settings-wrapper {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+
+}
+
 .settings {
 
     display: flex;
     flex-direction: column;
     align-items: center;
     height: auto;
-    width: 100%;
+    width: 80%;
+    background-color: color.$color-primary;
+    padding: 20px;
+    border-radius: 100px;
 
     .security,
     .preferences {
 
-        width: 80%;
+        width: 65%;
         background-color: color.$color-primary;
         margin: 10px;
+        border: 1px solid black;
+
+        h2 {
+            padding: 20px
+        }
+
+        h4 {
+            padding: 0 20px 20px 20px;
+        }
+
+        border-radius: 20px;
 
         .setting-box {
 
             background-color: color.$color-secondary;
-            padding: 10px;
+            border-radius: 0 0 20px 20px;
 
+            padding: 30px
         }
 
     }
 
+}
+
+.setting-divider {
+
+    display: block;
+    width: 300px;
+    text-align: center;
+    margin: 20px auto;
+
+    h2 {
+
+        padding: 10px;
+
+    }
 }
 
 #set-email form {
