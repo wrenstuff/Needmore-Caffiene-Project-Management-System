@@ -11,6 +11,7 @@
 @use 'login';
 @use 'signup';
 @use 'account';
+@use 'projects';
 
 // Global styles
 .wrapper {
@@ -19,4 +20,3 @@
     width: 100vw;
 
 }
-
