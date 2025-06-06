@@ -34,6 +34,56 @@
   background-color: #A1A1A1;
 }
 
+.footerContainer {
+  background-color: #d9d9d9;
+  padding: 20px;
+  font-family: sans-serif;
+}
+.footerContainer .socialIcons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.footerContainer .socialIcons a {
+  border: 1px solid #000;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: #000;
+  text-decoration: none;
+}
+.footerContainer .footerBottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+.footerContainer .footerBottom .copyrightText {
+  flex: 1;
+}
+.footerContainer .footerBottom .links {
+  flex: 1;
+  display: flex;
+  gap: 15px;
+  justify-content: right;
+  margin-right: -230px;
+  margin-top: 48px;
+}
+.footerContainer .footerBottom .links a {
+  color: #000;
+  text-decoration: underline;
+}
+.footerContainer .footerBottom .contactInfo {
+  flex: 1;
+  text-align: right;
+}
+.footerContainer .footerBottom .contactInfo a {
+  color: #000;
+}
+
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: #ffffff;
