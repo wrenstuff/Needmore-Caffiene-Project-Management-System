@@ -6,11 +6,12 @@
     .socialIcons {
         display: flex;
         gap: 10px;
-        margin-bottom: 20px;
+        margin-bottom: -20px;
+        margin-left: 150px;
 
         a {
             border: 1px solid #000;
-            padding: 8px;
+            padding: 0px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -29,6 +30,8 @@
 
         .copyrightText {
             flex: 1;
+            margin-top: 50px;
+            margin-left: 80px;
         }
 
         .links {
