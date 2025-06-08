@@ -1,16 +1,23 @@
+// Removing brpwser default styles
 @use 'cleanse';
+
+// Importing component specific styles
 @use 'nav-bar';
 @use 'footer';
 @use 'card';
+
+// Importing page specific styles
 @use 'faq';
 @use 'login';
 @use 'signup';
+@use 'account';
 @use 'projects';
 @use 'about-us';
 
+// Global styles
 .wrapper {
 
     min-height: 90vh;
+    width: 100vw;
 
 }
-
