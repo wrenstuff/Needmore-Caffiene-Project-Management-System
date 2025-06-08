@@ -7,6 +7,10 @@
     grid-template-columns: 10% 90%;
     grid-template-rows: 100%;
 
+    width: 100%;
+    overflow: hidden;
+    
+
     .faq-header {
 
         grid-column: 1;
@@ -54,7 +58,8 @@
         background-color: color.$color-primary;
         margin: 10px;
         border-radius: 20px;
-        width: 70vw;
+        max-width: 70vw;
+        min-width: 70vw;
         justify-content: center;
         align-items: center;
         flex-direction: column;
