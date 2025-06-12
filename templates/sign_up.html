@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="../components/nav_bar.js"></script>
-    <script type="module" src="../components/footer.js"></script>
-    <link rel="stylesheet" href="/styles/main.css">
+    <script src="{{ url_for('static', filename='js/nav_bar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <title>Sign up</title>
 
 
@@ -46,11 +46,11 @@
                     <input  type="checkbox" id="terms" name="terms" required>
                     <label id="terms-text" for="terms">By creating an account I agree to the <a href="#">Terms and Conditions</a></label>
                 </div>
-                 <a id="return-login" href="login.html"> Return to Login</a>
+                 <a id="return-login" href="{{ url_for('login') }}"> Return to Login</a>
                 <button id="signup-button" type="button">Signup</button>
                 <script>
                     document.getElementById("signup-button").addEventListener("click", function () {
-                        window.location.href = "dashboard.html"; // Replace with the actual path to your dashboard
+                        window.location.href = "{{ url_for('dashboard') }}"; // Replace with the actual path to your dashboard
                     });
                 </script>
                 
