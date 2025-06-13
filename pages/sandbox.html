@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <script type="module" src="../components/nav_bar.js"></script>
+      <script type="module" src="../components/toolbar.js"></script>
+      <script type="module" src="../components/textbox.js"></script>
+      <link rel="stylesheet" href="../styles/main.css">
+      <title>Sandbox</title>
+    </head>
+
+    <body>
+      <!-- Wont allow the textbox to be visible when implemented, will troubleshoot -->
+    <!-- <comp-nav-bar></comp-nav-bar>  --> 
+
+    <div class="sandbox" id="sandboxArea">
+      <canvas id="drawingCanvas" width="800" height="600"></canvas>
+    </div>
+
+    <div class="toolbar left" id="leftToolbar">
+      <button class="collapse-btn" onclick="toggleToolbar('bottomToolbar')">☰</button>
+      <div class="content">
+          <div class="icon-grid horizontal">
+            <div class="icon">T</div>
+          </div>
+      </div>
+    </div>
+    <div class="toolbar right" id="rightToolbar">
+      <button class="collapse-btn" onclick="toggleToolbar('bottomToolbar')">☰</button>
+      <div class="content">
+          <div class="icon-grid horizontal">
+            <div class="icon">T</div>
+          </div>
+      </div>
+    </div>
+
+    <div class="toolbar bottom" id="bottomToolbar">
+      <button class="collapse-btn" onclick="toggleToolbar('bottomToolbar')">☰</button>
+      <div class="content">
+          <div class="icon-grid horizontal">
+            <div class="icon" onclick="selectTool(this, 'addTextBox')" title="Text Tool">T</div>
+            <div class="icon" onclick="selectTool(this, 'draw')" title="Draw Tool">✏️</div>
+            <div class="icon" onclick="selectTool(this, 'erase')" title="Eraser">🧽</div>
+            <div class="icon" onclick="selectTool(this, 'line')" title="Line Tool">📏</div>
+            <div class="icon" onclick="selectTool(this, 'shape')" title="Shape Tool">🔲</div>
+            <div class="icon" onclick="selectTool(this, 'uploadImage')" title="Upload Image">🖼️</div>
+            <div class="icon" onclick="selectTool(this, 'move')" title="Move/Select">🧭</div>
+          </div>
+      </div>
+    </div>
+
+    <script type="module"> // Js module, will move to a separate file later- implemented here to show logic works //
+      import { toggleToolbar } from '../components/toolbar.js';
+      import { addTextBox } from '../components/textbox.js';
+      window.toggleToolbar = toggleToolbar;
+      window.addTextBox = addTextBox;
+
+      window.selectTool = function (el, toolName) {
+      document.querySelectorAll('.icon').forEach(i => i.classList.remove('selected'));
+      el.classList.add('selected');
+
+      switch (toolName) { // Switch case to handle tool selection //
+        case 'addTextBox':
+          addTextBox();
+          break;
+        case 'draw':
+          console.log("Draw tool selected");
+          break;
+        case 'erase':
+          console.log("Eraser selected");
+          break;
+        case 'line':
+          console.log("Line tool selected");
+          break;
+        case 'shape':
+          console.log("Shape tool selected");
+          break;
+        case 'uploadImage':
+          console.log("Upload image selected");
+          break;
+        case 'move':
+          console.log("Move/select tool selected");
+          break;
+        default:
+          console.log("Unknown tool:", toolName);
+      }
+    };
+
+    </script>
+  </body>
+</html>
