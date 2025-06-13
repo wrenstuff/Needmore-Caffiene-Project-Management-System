@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="../components/nav_bar.js"></script>
     <script type="module" src="../components/footer.js"></script>
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="../static/main.css">
     <title>Sign up</title>
 
 
@@ -15,8 +15,8 @@
 <body>
     <div class=signup-page>
         <div class="signup-container">
-            <form class="signup-form">
-                <img src="/images/icon-placeholder.png" alt="icon-placeholder" class="placeholder">
+            <form method="POST" action="{{ url_for('signup.signup') }}" class="signup-form">
+                <img src="{{ url_for('static', filename='images/icon-placeholder.png') }}" class="placeholder" alt="icon">
                 <h2 class="header-text">Sign up</h2>
                 <!-- {put each in div for poisitoning and entry box for styiling those}-->
                 <div class="username-entry">
@@ -27,8 +27,8 @@
 
                 <div class="email-entry">
                     <label for="email">Email:</label>
-                    <input class="entry-box" type="email" id="email" name="email"
-                        placeholder="Enter your Email address" required>
+                    <input class="entry-box" type="email" id="email" name="email" placeholder="Enter your Email address"
+                        required>
                 </div>
                 <!-- {put each in div for poisitoning and entry box for styiling those}-->
                 <div class="password-entry">
@@ -37,23 +37,18 @@
                         placeholder="Enter your Password" required>
                 </div>
 
-                 <div class="confirm-password-entry">
+                <div class="confirm-password-entry">
                     <label for="password">Confirm Password:</label>
                     <input class="entry-box" type="password" id="password" name="password"
                         placeholder="Confirm your Password" required>
                 </div>
                 <div class="checkbox-entry">
-                    <input  type="checkbox" id="terms" name="terms" required>
-                    <label id="terms-text" for="terms">By creating an account I agree to the <a href="#">Terms and Conditions</a></label>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label id="terms-text" for="terms">By creating an account I agree to the <a href="#">Terms and
+                            Conditions</a></label>
                 </div>
-                 <a id="return-login" href="login.html"> Return to Login</a>
-                <button id="signup-button" type="button">Signup</button>
-                <script>
-                    document.getElementById("signup-button").addEventListener("click", function () {
-                        window.location.href = "dashboard.html"; // Replace with the actual path to your dashboard
-                    });
-                </script>
-                
+                <a id="return-login" href="login.html"> Return to Login</a>
+                <button id="signup-button" type=submit>Sign Up</button>
             </form>
         </div>
     </div>
