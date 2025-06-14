@@ -2,3 +2,6 @@
 *.css
 *.css.map
 venv/
+__pycache__/
+*.py[cod]
+
