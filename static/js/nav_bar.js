@@ -10,15 +10,15 @@ connectedCallback() {
     `
         <div class="nav-bar">
         <ul class="nav-left">
-            <li><a href="{{ url_for('dashboard') }}">Home</a></li>
-            <li><a href="{{ url_for('projects') }}">Projects</a></li>
-            <li><a href="{{ url_for('marketplace') }}">Marketplace</a></li>
-            <li><a href="{{ url_for('marketplace') }}">Membership</a></li>
-            <li><a href="{{ url_for('about') }}">About Us</a></li>
-            <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+            <li><a href="/dashboard">Home</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/marketplace">Marketplace</a></li>
+            <li><a href="/pricing">Membership</a></li>
+            <li><a href="/about_us">About Us</a></li>
+            <li><a href="/faq">FAQ</a></li>
         </ul>
         <ul class="nav-right">
-            <li><a href="{{ url_for('account') }}">Account</a></li>
+            <li><a href="/account">Account</a></li>
         </ul>
     </div>
     `
