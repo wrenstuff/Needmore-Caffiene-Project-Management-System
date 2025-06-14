@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="{{ url_for('static', filename='js/nav_bar.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/project_card.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/plugin_card.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/project_card.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/plugin_card.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
   <title>Marketplace</title>
 </head>
 
@@ -31,9 +32,12 @@
     </section>
   </main>
 
+
+  <script src="{{ url_for('static', filename='js/marketplace_card.js') }}"></script>
+
   <!-- Footer -->
   <comp-footer></comp-footer>
 
-  <script src="../components/marketplace_card.js"></script>
 </body>
+
 </html>
