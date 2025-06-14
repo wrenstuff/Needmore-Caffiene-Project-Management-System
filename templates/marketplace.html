@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="{{ url_for('static', filename='js/nav_bar.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/project_card.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/plugin_card.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-    <title>Marketplae</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="{{ url_for('static', filename='js/nav_bar.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/project_card.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/plugin_card.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css') }}">
+  <title>Marketplace</title>
 </head>
+
 <body>
-    <comp-nav-bar></comp-nav-bar>
-    <h1>Marketplace</h1>
-    <comp-footer></comp-footer>
+  <!-- Nav bar -->
+  <comp-nav-bar></comp-nav-bar>
+
+  <main class="main-content">
+    <!-- Plugin Section -->
+    <section class="section">
+      <h2 class="section-title">Plugins</h2>
+      <div class="card-grid" id="plugins-grid">
+      </div>
+    </section>
+
+    <!-- Theme Section -->
+    <section class="section">
+      <h2 class="section-title">Themes</h2>
+      <div class="card-grid" id="themes-grid">
+      </div>
+    </section>
+  </main>
+
+
+  <script src="{{ url_for('static', filename='js/marketplace_card.js') }}"></script>
+
+  <!-- Footer -->
+  <comp-footer></comp-footer>
+
 </body>
+
 </html>
