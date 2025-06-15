@@ -1,15 +1,31 @@
-from flask import Flask, render_template, request, redirect, url_for
-import logging
+from flask import Flask, redirect, url_for , render_template, request
+from user_model import db
 import os
+from signup import signup_bp
+from login import login_bp
+import logging
 
 logging.basicConfig(level=logging.INFO)
 
 app = Flask(__name__)
+app.secret_key = 'super-secret-key'
+# Configure the database URI
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'database/users.db')
+
+db.init_app(app)
+
+#Register the blueprints
+app.register_blueprint(signup_bp)
+app.register_blueprint(login_bp)
 
 @app.route('/')
 def index():
-    #return render_template('index.html')
-    return redirect(url_for('login'))
+    return redirect(url_for('login.login'))
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
 
 @app.route('/about_us')
 def about_us():
@@ -19,9 +35,8 @@ def about_us():
 def account():
     return render_template('account.html')
 
-@app.route('/dashboard')
-def dashboard():
-    return render_template('dashboard.html')
+with app.app_context():
+    db.create_all()
 
 @app.route('/faq')
 def faq():
