@@ -21,7 +21,7 @@
       }
     }
 
-    .sign_up {
+    .sign_up_member {
       font-size: 0.95rem;
     }
   }
@@ -36,15 +36,15 @@
 }
 
 // Nav bar piositioning
-  comp-nav-bar {
+comp-nav-bar {
   position: sticky;
   top: 0;
   z-index: 999;
-  }
+}
 
-  comp-footer{
+comp-footer {
   z-index: 999;
-  }
+}
 
 // Card hover
 :root {
@@ -65,7 +65,7 @@ body {
 // Main content
 .main {
   position: relative;
-  padding: 2rem 1rem;
+  // padding: 2rem 1rem;
   text-align: center;
   overflow: hidden;
 
@@ -92,15 +92,22 @@ body {
     object-fit: cover;
     z-index: 0;
     pointer-events: none;
-   
+
   }
 }
 
 // Header
-h1, p, .description, .price {
-  user-select: none;    
-  pointer-events: none;  
+main {
+
+  h1,
+  p,
+  .description,
+  .price {
+    user-select: none;
+    pointer-events: none;
+  }
 }
+
 
 // Plan container
 .plans {
@@ -166,6 +173,7 @@ h1, p, .description, .price {
     li {
       position: relative;
       font-size: 1rem;
+
       &:not(:last-child)::after {
         content: "";
         display: block;
@@ -176,16 +184,16 @@ h1, p, .description, .price {
     }
   }
 
-// Divider
-.divider {
-  height: 1px;
-  width: 100%;
-  background-color: #ddd;
-  margin: 0.5rem 0;
-}
- 
-// Sign up button (might change to free trial)
-  .sign_up {
+  // Divider
+  .divider {
+    height: 1px;
+    width: 100%;
+    background-color: #ddd;
+    margin: 0.5rem 0;
+  }
+
+  // Sign up button (might change to free trial)
+  .sign_up_member {
     background-color: var(--primary-color);
     color: #fff;
     padding: 0.6rem 1.5rem;
@@ -222,7 +230,7 @@ h1, p, .description, .price {
     text-align: center;
     padding: 1rem 0;
     box-shadow: #000000;
-    animation: pulse 2s infinite; 
+    animation: pulse 2s infinite;
   }
 }
 
@@ -236,15 +244,16 @@ h1, p, .description, .price {
     left: 0px;
     transform-origin: left;
     transform: rotate(-45deg) translateX(-100px);
-    
+
   }
 }
 
 .coming-soon-banner.top-right {
-    top: 0;
+  top: 0;
   right: 0;
   z-index: 998;
-    span {
+
+  span {
     top: 75%;
     right: 0px;
     transform-origin: right;
@@ -252,7 +261,15 @@ h1, p, .description, .price {
   }
 }
 
-@keyframes pulse { // Animation for the coming soon banner
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+@keyframes pulse {
+
+  // Animation for the coming soon banner
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
 }

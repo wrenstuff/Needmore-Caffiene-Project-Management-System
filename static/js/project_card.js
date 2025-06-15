@@ -9,12 +9,12 @@ class Project_Card extends HTMLElement {
         // stylesheet for the component can be found at styles/card.scss
         this.innerHTML =
         `
-        <div class="project card" id="${uniqueId}">
+        <div class="project card_w" id="${uniqueId}">
             <div class="notif">
                 <p>9+</p>
             </div>
             <div class="top">
-                <img src="../images/Blue_test.png" alt="">
+                <img src="../static/images/Blue_test.png" alt="">
             </div>
             <div class="bottom">
                 <!-- Project Name -->

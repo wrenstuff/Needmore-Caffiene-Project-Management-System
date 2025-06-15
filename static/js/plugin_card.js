@@ -7,7 +7,7 @@ class Plugin_Card extends HTMLElement {
         const uniqueId = Date.now().toString(36) + Math.random().toString(36).substring(2);
 
         this.innerHTML = `
-            <div class="project card" id="${uniqueId}">
+            <div class="project card_w" id="${uniqueId}">
                 <div class="add">
                     <img src="../images/icons8-plus-48.png" alt="" class="inactive">
                     <img src="../images/icons8-check-48.png" alt="" class="active hidden">
