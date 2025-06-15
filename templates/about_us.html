@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="../components/nav_bar.js"></script>
-    <script type="module" src="../components/footer.js"></script>
-    <link rel="stylesheet" href="/static//styles/_about-us.scss">
+    <script src="{{ url_for('static', filename='js/nav_bar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css') }}">
     <title>About Us</title>
 </head>
 
@@ -21,7 +21,7 @@
         <div class="about-us-content">
             <span class="about-us-title"></span>
             <span class="our-history-container">Our history</span>
-            <img src="../images/icon-placeholder.png" class="our-history-image">
+            <img src="{{ url_for('static', filename='images/icon-placeholder.png') }}" class="our-history-image">
 
             <div class="our-history-text">
                 <p>We are a team of passionate individuals dedicated to making a difference in the world. Our journey
@@ -45,7 +45,7 @@
                     organizations and individuals who share our vision. We believe in the power of community and strive
                     to empower others through our initiatives.</p>
             </div>
-            <img src="../images/icon-placeholder.png" class="our-goals-image">
+            <img src="{{ url_for('static', filename='images/icon-placeholder.png') }}" class="our-goals-image">
         </div>
 
     </main>

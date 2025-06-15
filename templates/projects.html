@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="../components/nav_bar.js"></script>
-    <script type="module" src="../components/footer.js"></script>
-    <script type="module" src="../components/project_card.js"></script>
+    <script src="{{ url_for('static', filename='js/nav_bar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/project_card.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css') }}">
     <title>Projects</title>
 </head>
