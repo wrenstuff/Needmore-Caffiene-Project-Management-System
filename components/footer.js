@@ -11,12 +11,12 @@ connectedCallback() {
     <div class="page-footer">
         <div class="social-media-links">
             <ul>
-                <li><a href="https://www.facebook.com" target="_blank"><img class="social-icons" src="../images/icon-placeholder.png" alt="facebook"></a></li>
-                <li><a href="https://www.twitter.com" target="_blank"><img class="social-icons" src="../images/icon-placeholder.png" alt="twitter"></a></li>
-                <li><a href="https://www.instagram.com" target="_blank"><img class="social-icons" src="../images/icon-placeholder.png" alt="instagram"></a></li>
-                <li><a href="https://www.linkedin.com" target="_blank"><img class="social-icons" src="../images/icon-placeholder.png" alt="linkedin"></a></li>
-                <li><a href="https://www.youtube.com" target="_blank"><img class="social-icons" src="../images/icon-placeholder.png" alt="youtube"></a></li>
-                <li><a href="mailto:#" target="_blank"><img class="social-icons" src="../images/icon-placeholder.png" alt="email"></a></li>
+                <li><a href="https://www.facebook.com" target="_blank"><img class="social-icons" src="../images/facebook.svg" alt="facebook"></a></li>
+                <li><a href="https://www.twitter.com" target="_blank"><img class="social-icons" src="../images/twitter.svg" alt="twitter"></a></li>
+                <li><a href="https://www.instagram.com" target="_blank"><img class="social-icons" src="../images/instagram.svg" alt="instagram"></a></li>
+                <li><a href="https://www.linkedin.com" target="_blank"><img class="social-icons" src="../images/linkedin.svg" alt="linkedin"></a></li>
+                <li><a href="https://www.youtube.com" target="_blank"><img class="social-icons" src="../images/youtube.svg" alt="youtube"></a></li>
+                <li><a href="mailto:email@email.com"><img class="social-icons" src="../images/envelope.svg" alt="email"></a></li>
             </ul>
         </div>
         <div class="contact-info">
