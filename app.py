@@ -44,48 +44,48 @@ def test_login():
         return "User is NOT logged in."
 
 # Route to render the dashboard page
-@app.route('/dashboard')
+@app.route('/dashboard-<username>')
 @login_required
-def dashboard():
-    return render_template('dashboard.html', user=current_user)
+def dashboard(username):
+    return render_template('dashboard.html', user=current_user, username=username)
 
 # Route to render the about us page
-@app.route('/about_us')
-def about_us():
-    return render_template('about_us.html')
+@app.route('/about_us-<username>')
+def about_us(username):
+    return render_template('about_us.html', user=current_user, username=username)
 
 # Route to render the contact us page
-@app.route('/account', methods=['GET', 'POST'])
+@app.route('/account-<username>', methods=['GET', 'POST'])
 @login_required
-def account():
-    return render_template('account.html' , user=current_user)
+def account(username):
+    return render_template('account.html' , user=current_user, username=username)
 
 
 with app.app_context():
     db.create_all()
 
 # Route to render the FAQ page
-@app.route('/faq')
-def faq():
-    return render_template('faq.html' , user=current_user)
+@app.route('/faq-<username>')
+def faq(username):
+    return render_template('faq.html' , user=current_user, username=username)
 
 # Route to render the marketplace page
-@app.route('/marketplace')
+@app.route('/marketplace-<username>')
 @login_required
-def marketplace():
-    return render_template('marketplace.html' , user=current_user)
+def marketplace(username):
+    return render_template('marketplace.html' , user=current_user, username=username)
 
 # Route to render the pricing page
-@app.route('/pricing')
+@app.route('/pricing-<username>')
 @login_required
-def pricing():
-    return render_template('pricing.html' , user=current_user)
+def pricing(username):
+    return render_template('pricing.html' , user=current_user, username=username)
 
 # Route to render the projects page
-@app.route('/projects')
+@app.route('/projects-<username>')
 @login_required
-def projects():
-    return render_template('projects.html' , user=current_user)
+def projects(username):
+    return render_template('projects.html' , user=current_user, username=username)
 
 
 if __name__ == '__main__':
