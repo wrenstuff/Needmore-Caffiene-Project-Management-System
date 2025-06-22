@@ -3,11 +3,11 @@ class Nav_Bar extends HTMLElement {
         super();
     }
 
-connectedCallback() {
+    connectedCallback() {
 
-    // stylesheet for the component can be found at styles/nav-bar.scss
-    this.innerHTML = 
-    `
+        // stylesheet for the component can be found at styles/nav-bar.scss
+        this.innerHTML =
+            `
         <div class="nav-bar">
         <ul class="nav-left">
             <li><a href="/dashboard">Home</a></li>
@@ -18,7 +18,10 @@ connectedCallback() {
             <li><a href="/faq">FAQ</a></li>
         </ul>
         <ul class="nav-right">
-            <li><a href="/account">Account</a></li>
+            <li>
+                
+                <a href="/account"><img src="/static/images/Blue_test.png" alt="profile image"><p class="account-text">Account</p></a>
+            </li>
         </ul>
     </div>
     `
