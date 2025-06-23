@@ -22,7 +22,7 @@ def login():
         if user and check_password_hash(user.password, password):
             login_user(user) # This logs the user in
             flash("Login successful!", "success")
-            return redirect(url_for('dashboard'))  
+            return redirect(url_for('dashboard', username=user.username))  # Redirect to the dashboard with the username
         else:
             flash("Invalid email or password.", "danger")
             return redirect(url_for('login.login'))

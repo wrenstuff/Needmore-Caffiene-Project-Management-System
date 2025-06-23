@@ -8,3 +8,4 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(32), unique=True, nullable=False)
     email = db.Column(db.String(254), unique=True, nullable=False)
     password = db.Column(db.String(150), nullable=False)
+    image_path = db.Column(db.String(255))
