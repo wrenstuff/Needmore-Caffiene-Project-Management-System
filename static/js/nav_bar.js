@@ -22,7 +22,7 @@ class Nav_Bar extends HTMLElement {
         <ul class="nav-right">
             <li>
                 
-                <a href="/account-${username}"><img src="/static/images/Blue_test.png" alt="profile image"><p class="account-text">Account</p></a>
+                <a href="/account-${username}"><img src="/static/images/users/${username}_pfp.jpg" alt="profile image"><p class="account-text">Account</p></a>
             </li>
         </ul>
     </div>

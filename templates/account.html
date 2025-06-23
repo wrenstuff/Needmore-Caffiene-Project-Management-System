@@ -17,9 +17,10 @@
 
         <div class="profile-wrapper">
             <div class="profile">
-                <img src="{{ url_for('static', filename='images/Blue_test.png') }}" alt="">
+                <img src="static/images/users/{{ username }}_pfp.jpg" alt="{{ username }}'s Profile Picture">
                 <div class="text">
                     <h1 class="name">Test Name</h1>
+                    <p class="username">{{ username }}</p>
                     <p class="pronouns">pronouns</p>
                     <p class="job">Job Title</p>
                 </div>
