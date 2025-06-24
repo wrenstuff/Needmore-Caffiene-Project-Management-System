@@ -3,17 +3,26 @@
 .nav-bar {
 
     background-color: color.$color-primary;
-
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    .nav-left li {
-        float: left;
+    .nav-left {
+        height: 100%;
+
+        li {
+            float: left;
+        }
     }
 
-    .nav-right  li {
-        float: right;
+    .nav-right {
+        height: 100%;
+
+        li {
+
+            float: right;
+        }
     }
 
     ul {
@@ -26,18 +35,40 @@
 
         li {
 
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             a {
 
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                display: block;
+                display: flex;
                 color: color.$color-dark-text;
                 text-align: center;
-                padding: 14px 16px;
+                padding: 0px 16px;
                 text-decoration: none;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
 
                 //on hover
                 &:hover {
                     background-color: color.$color-tertiary;
+                }
+
+                .account-text {
+
+                    padding-left: 10px;
+
+                }
+
+                img {
+
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+
                 }
 
             }
@@ -45,5 +76,7 @@
         }
 
     }
+
+
 
 }
