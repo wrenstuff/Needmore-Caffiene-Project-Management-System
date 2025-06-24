@@ -7,6 +7,7 @@
     <script src="{{ url_for('static', filename='js/nav_bar.js') }}"></script>
     <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
     <script src="{{ url_for('static', filename='js/project_card.js') }}"></script>
+    
     <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css') }}">
     <title>Projects</title>
 </head>
@@ -19,42 +20,32 @@
             <span class="projects-title">Projects</span>
         </div>
         <div class="recent-projects-title">
-            <span class="section-title">Recent Projects</span>
+            <span class="section-title"><!--Recent Projects--></span>
         </div>
         <!-- Example of a project card component -->
         <div class="project-list">
-            <comp-project-card title="Project one" description="This is a description of project one.">
-            </comp-project-card>
-            <comp-project-card title="Project one" description="This is a description of project one.">
-            </comp-project-card>
-            <comp-project-card title="Project one" description="This is a description of project one.">
-            </comp-project-card>
+            <form method="POST" action="/create_project-{{ username }}">
+                <input type="text" name="title" placeholder="Project Title" required>
+                <textarea name="description" placeholder="Project Description"></textarea>
+                <button type="submit">Create Project</button>
+            </form>
             
         </div>
         <div class="all-projects-title">
             <span class="section-title">All Projects</span>
         </div>
 
-          <div class="all-project-list">
-            <comp-project-card title="Project one" description="This is a description of project one.">
-            </comp-project-card>
-            <comp-project-card title="Project one" description="This is a description of project one.">
-            </comp-project-card>
-            <comp-project-card title="Project one" description="This is a description of project one.">
-            </comp-project-card>
-            <comp-project-card title="Project one" description="This is a description of project one.">
-            </comp-project-card>
-            <comp-project-card title="Project one" description="This is a description of project one.">
-            </comp-project-card>
+        <div class="all-project-list" id="project-container">
 
-            
+
         </div>
+        <script src="{{ url_for('static', filename='js/projects.js') }}"></script>
     </main>
     <div class="footer-spacer">
         <comp-footer></comp-footer>
     </div>
-        
-    
+
+
 </body>
 
 </html>
