@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="{{ url_for('static', filename='js/nav_bar.js') }}"></script>
     <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/flash_messages.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css') }}">
     <title>Log in</title>
 
@@ -16,8 +17,20 @@
     <div class=login-page>
         <div class="login-container">
             <form class="login-form" method ='POST' action="{{ url_for('login.login') }}">
-                <img src="{{ url_for('static', filename='images/icon-placeholder.png') }}" alt="icon-placeholder" class="placeholder">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="icon-placeholder" class="placeholder">
                 <h2 class="header-text">Log in</h2>
+
+                 {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                <div class="flash-message {{ category }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
                 <!-- {put each in div for poisitoning and entry box for styiling those}-->
                 <div class="username-entry">
                     <label for="username">Email / Username:</label>
@@ -34,12 +47,11 @@
                 <p id="sign-up">No account?&nbsp <a href="{{ url_for('signup.signup') }}"> Sign up</a></p>
                 <!-- <button id="loginbutton" type="submit">Login</button> -->
                 <button id="login-button" type="submit">Login</button>
-                
-                
+
+
                 <a id="forgot-password" href="#">Forgot Password?</a>
             </form>
         </div>
     </div>
 </body>
-
 </html>

@@ -23,10 +23,21 @@ class Nav_Bar extends HTMLElement {
             <li>
                 
                 <a href="/account-${username}"><img src="/static/images/users/${username}_pfp.jpg" alt="profile image"><p class="account-text">Account</p></a>
+                <a href="/logout" class="logout-button" id="logout-link">Logout</a>
             </li>
         </ul>
     </div>
-    `
+    `;
+    // Add event listener to the logout link
+    // This will prompt the user for confirmation before logging out
+    const logoutLink = this.querySelector('#logout-link');
+    if (logoutLink) {
+        logoutLink.addEventListener('click', function(e) {
+        if (!confirm('Are you sure you wish to Logout?')) {
+            e.preventDefault();
+        }
+    });
+}
     }
 
 }

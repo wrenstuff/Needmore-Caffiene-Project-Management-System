@@ -11,12 +11,12 @@ connectedCallback() {
     <div class="page-footer">
         <div class="social-media-links">
             <ul>
-                <li><a href="https://www.facebook.com" target="_blank"><img class="social-icons" src="../images/icon-placeholder.png" alt="facebook"></a></li>
-                <li><a href="https://www.twitter.com" target="_blank"><img class="social-icons" src="../images/icon-placeholder.png" alt="twitter"></a></li>
-                <li><a href="https://www.instagram.com" target="_blank"><img class="social-icons" src="../images/icon-placeholder.png" alt="instagram"></a></li>
-                <li><a href="https://www.linkedin.com" target="_blank"><img class="social-icons" src="../images/icon-placeholder.png" alt="linkedin"></a></li>
-                <li><a href="https://www.youtube.com" target="_blank"><img class="social-icons" src="../images/icon-placeholder.png" alt="youtube"></a></li>
-                <li><a href="mailto:#" target="_blank"><img class="social-icons" src="../images/icon-placeholder.png" alt="email"></a></li>
+                <li><a href="https://www.facebook.com" target="_blank"><img class="social-icons" src="static/images/icon-facebook.png" alt="facebook"></a></li>
+                <li><a href="https://www.twitter.com" target="_blank"><img class="social-icons" src="static/images/icon-twitter.png" alt="twitter"></a></li>
+                <li><a href="https://www.instagram.com" target="_blank"><img class="social-icons" src="static/images/icon-instagram.png" alt="instagram"></a></li>
+                <li><a href="https://www.linkedin.com" target="_blank"><img class="social-icons" src="static/images/icon-linkedin.png" alt="linkedin"></a></li>
+                <li><a href="https://www.youtube.com" target="_blank"><img class="social-icons" src="static/images/icon-youtube.png" alt="youtube"></a></li>
+                <li><a href="mailto:#" target="_blank"><img class="social-icons" src="static/images/icon-email.png" alt="email"></a></li>
             </ul>
         </div>
         <div class="contact-info">

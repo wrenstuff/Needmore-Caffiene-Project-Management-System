@@ -5,6 +5,7 @@
 @use 'nav-bar';
 @use 'footer';
 @use 'card';
+@use 'flash-messages';
 
 // Importing page specific styles
 @use 'faq';
@@ -15,6 +16,8 @@
 @use 'about-us';
 @use 'membership';
 @use 'marketplace';
+@use 'newsbanner';
+
 
 // Global styles
 .wrapper {
