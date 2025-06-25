@@ -23,3 +23,12 @@ $color-shadow: #A1A1A1;
 // Line seperator and box transparent background
 $color-transparent:  #cccccc00;
 $color-line: #050202;
+
+//flash box shadow
+$flash-box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+
+//flash message colors
+$flash-success: #4caf50;
+$flash-danger: #f44336;
+$flash-warning: #ff9800;
+$flash-info: #2196f3;

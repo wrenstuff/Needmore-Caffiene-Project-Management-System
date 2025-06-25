@@ -1,0 +1,40 @@
+@use 'color';
+
+.flash-messages {
+    margin: 10px auto;
+    max-width: 600px;
+    padding: 0;
+    display: block;
+}
+
+.flash-message {
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #fff;
+    box-shadow: 0 2px 8px color.$flash-box-shadow;
+    transition: background 0.3s;
+    box-sizing: border-box;
+}
+
+.flash-message.success {
+    background: color.$flash-success;
+}
+
+.flash-message.danger {
+    background: color.$flash-danger;
+}
+
+.flash-message.warning {
+    background: color.$flash-warning;
+}
+
+.flash-message.info {
+    background: color.$flash-info;
+}
+
+.flash-message.flash-message.info{
+    background: color.$flash-info;
+}
