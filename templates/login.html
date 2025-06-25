@@ -16,10 +16,8 @@
 <body class="login-page">
     <div class=login-page>
         <div class="login-container">
-           
-            <form class="login-form" method='POST' action="{{ url_for('login.login') }}">
-                <img src="{{ url_for('static', filename='images/icon-placeholder.png') }}" alt="icon-placeholder"
-                    class="placeholder">
+            <form class="login-form" method ='POST' action="{{ url_for('login.login') }}">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="icon-placeholder" class="placeholder">
                 <h2 class="header-text">Log in</h2>
 
                  {% with messages = get_flashed_messages(with_categories=true) %}

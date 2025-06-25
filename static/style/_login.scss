@@ -79,14 +79,16 @@ max-width: 700px;
   }
   //image placeholder
   .placeholder{
-    grid-column: 1/ span 2;
+    grid-column: 1;
     grid-row: 1;
     height: 80px;
     width: 100px;
     justify-self: center;
     align-self: center;
-    padding-right: 100px;
+    padding-right: 5px;
     margin-bottom: 20px;
+    border-radius: 20%;
+    
   }
   
   #sign-up {

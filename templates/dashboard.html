@@ -1,29 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="{{ url_for('static', filename='js/nav_bar.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/project_card.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/flash_messages.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css') }}">
-    <title>Dashboard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="{{ url_for('static', filename='js/nav_bar.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/project_card.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/flash_messages.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css') }}">
+  <title>Dashboard</title>
 </head>
+
 <body>
-    <comp-nav-bar data-username="{{ username }}"></comp-nav-bar>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    <div class="flash-messages">
-      {% for category, message in messages %}
-        <div class="flash-message {{ category }}">
-          {{ message }}
-        </div>
-      {% endfor %}
+  <comp-nav-bar data-username="{{ username }}"></comp-nav-bar>
+  <div class="news-banner">
+    <a>🚀 Welcome to Needmore Caffeine! Check out our latest updates and features!</a>
+  </div>
+
+  <main class="main-content">
+
+    <div class="title-container">
+      <span class="projects-title">Projects</span>
     </div>
+    <div class="recent-projects-title">
+      <span class="section-title">Recent Projects</span>
+    </div>
+    <!-- Example of a project card component -->
+    <div class="project-list">
+      <comp-project-card title="Project one" description="This is a description of project one.">
+      </comp-project-card>
+      <comp-project-card title="Project one" description="This is a description of project one.">
+      </comp-project-card>
+      <comp-project-card title="Project one" description="This is a description of project one.">
+      </comp-project-card>
+    </div>
+
+    <div class="all-projects-title">
+      <span class="section-title"> Your Projects</span>
+    </div>
+
+    <div class="all-project-list">
+      <comp-project-card title="Project one" description="This is a description of project one.">
+      </comp-project-card>
+      <comp-project-card title="Project one" description="This is a description of project one.">
+      </comp-project-card>
+      <comp-project-card title="Project one" description="This is a description of project one.">
+      </comp-project-card>
+      <comp-project-card title="Project one" description="This is a description of project one.">
+      </comp-project-card>
+      <comp-project-card title="Project one" description="This is a description of project one.">
+      </comp-project-card>
+
+
+    </div>
+  </main>
+
+  <div class="footer-spacer"><comp-footer></comp-footer></div>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <div class="flash-messages">
+    {% for category, message in messages %}
+    <div class="flash-message {{ category }}">
+      {{ message }}
+    </div>
+    {% endfor %}
+  </div>
   {% endif %}
-{% endwith %}
-    <h1>Dashboard</h1>
-    <comp-footer></comp-footer>
+  {% endwith %}
+  <h1>Dashboard</h1>
+  <comp-footer></comp-footer>
 </body>
+
 </html>
