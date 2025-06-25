@@ -11,7 +11,49 @@
 </head>
 <body>
     <comp-nav-bar data-username="{{ username }}"></comp-nav-bar>
-    <h1>Dashboard</h1>
-    <comp-footer></comp-footer>
+    <div class="news-banner">
+    <a>🚀 Welcome to Needmore Caffeine! Check out our latest updates and features!</a>
+    </div>
+
+    <main class="main-content">
+
+        <div class="title-container">
+            <span class="projects-title">Projects</span>
+        </div>
+        <div class="recent-projects-title">
+            <span class="section-title">Recent Projects</span>
+        </div>
+        <!-- Example of a project card component -->
+        <div class="project-list">
+            <comp-project-card title="Project one" description="This is a description of project one.">
+            </comp-project-card>
+            <comp-project-card title="Project one" description="This is a description of project one.">
+            </comp-project-card>
+            <comp-project-card title="Project one" description="This is a description of project one.">
+            </comp-project-card>
+        </div>
+
+        <div class="all-projects-title">
+            <span class="section-title"> Your Projects</span>
+        </div>
+
+          <div class="all-project-list">
+            <comp-project-card title="Project one" description="This is a description of project one.">
+            </comp-project-card>
+            <comp-project-card title="Project one" description="This is a description of project one.">
+            </comp-project-card>
+            <comp-project-card title="Project one" description="This is a description of project one.">
+            </comp-project-card>
+            <comp-project-card title="Project one" description="This is a description of project one.">
+            </comp-project-card>
+            <comp-project-card title="Project one" description="This is a description of project one.">
+            </comp-project-card>
+
+            
+        </div>
+    </main>
+
+    <div class="footer-spacer"><comp-footer></comp-footer></div>
+    
 </body>
 </html>
