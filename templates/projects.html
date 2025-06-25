@@ -7,7 +7,7 @@
     <script src="{{ url_for('static', filename='js/nav_bar.js') }}"></script>
     <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
     <script src="{{ url_for('static', filename='js/project_card.js') }}"></script>
-    
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css') }}">
     <title>Projects</title>
 </head>
@@ -24,12 +24,11 @@
         </div>
         <!-- Example of a project card component -->
         <div class="project-list">
-            <form method="POST" action="/create_project-{{ username }}">
-                <input type="text" name="title" placeholder="Project Title" required>
-                <textarea name="description" placeholder="Project Description"></textarea>
-                <button type="submit">Create Project</button>
+            <form method="POST" action="/create_project-{{ username }}" class="form-container">
+                <input class="p-title" type="text" name="title" placeholder="Project Title" required>
+                <textarea class="p-desc" name="description" placeholder="Project Description"></textarea>
+                <button class="create" type="submit">Create Project</button>
             </form>
-            
         </div>
         <div class="all-projects-title">
             <span class="section-title">All Projects</span>
