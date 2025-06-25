@@ -6,11 +6,23 @@
     <script src="{{ url_for('static', filename='js/nav_bar.js') }}"></script>
     <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
     <script src="{{ url_for('static', filename='js/project_card.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/flash_messages.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css') }}">
     <title>Dashboard</title>
 </head>
 <body>
     <comp-nav-bar data-username="{{ username }}"></comp-nav-bar>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="flash-messages">
+      {% for category, message in messages %}
+        <div class="flash-message {{ category }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
     <h1>Dashboard</h1>
     <comp-footer></comp-footer>
 </body>
