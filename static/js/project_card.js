@@ -4,11 +4,15 @@ class Project_Card extends HTMLElement {
     }
 
     connectedCallback() {
-        const uniqueId = Date.now().toString(36) + Math.random().toString(36).substring(2);
+
+        const uniqueId = this.getAttribute('id') || 'default-id';
+
+        const title = this.getAttribute('title') || 'Untitled';
+        const owner = this.getAttribute('owner') || 'Unknown';
 
         // stylesheet for the component can be found at styles/card.scss
         this.innerHTML =
-        `
+            `
         <div class="project card_w" id="${uniqueId}">
             <div class="notif">
                 <p>9+</p>
@@ -18,12 +22,12 @@ class Project_Card extends HTMLElement {
             </div>
             <div class="bottom">
                 <!-- Project Name -->
-                <p class="name">Project: ${uniqueId}</p>
+                <p class="name">Project: ${title}</p>
                 <!-- Owned By -->
-                <p class="create">Owned By: NAME</p>
+                <p class="create">Owned By: ${owner}</p>
             </div>
         </div>
-    `
+    `;
     }
 
 }

@@ -3,11 +3,10 @@ from user_model import db
 import os
 #log in  and log in state
 from flask_login import LoginManager, login_required, current_user
-from user_model import User 
+from user_model import User, Project
+# Import the blueprints for signup and login
 from signup import signup_bp
 from login import login_bp
-
-
 
 app = Flask(__name__)
 app.secret_key = 'super-secret-key'
@@ -86,6 +85,32 @@ def pricing(username):
 @login_required
 def projects(username):
     return render_template('projects.html' , user=current_user, username=username)
+
+@app.route('/create_project-<username>', methods=['GET', 'POST'])
+@login_required
+def create_project(username):
+    title = request.form.get('title')
+    description = request.form.get('description')
+    new_project = Project(title=title, description=description, owner_id=current_user.id)
+    db.session.add(new_project)
+    db.session.commit()
+    return redirect(url_for('projects', username=username))
+
+@app.route('/api/projects')
+@login_required
+def api_projects():
+    projects = Project.query.filter_by(owner_id=current_user.id).all()
+    return {
+        'projects': [
+            {
+                'id': p.id,
+                'title': p.title,
+                'description': p.description,
+                'owner': p.owner.username
+
+            } for p in projects
+        ]
+    }
 
 
 if __name__ == '__main__':
