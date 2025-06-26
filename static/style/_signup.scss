@@ -1,7 +1,7 @@
 @use 'color';
 
 $text-color: #333;
-$bg-image: url('/images/Blue_test.png');
+$bg-image: url('/static/images/Blue_test.png');
 
 .signup-page {
     margin: 0;
@@ -99,14 +99,15 @@ $bg-image: url('/images/Blue_test.png');
 
         //image placeholder
         .placeholder {
-            grid-column: 1/ span 2;
+            grid-column: 1;
             grid-row: 1;
             height: 80px;
             width: 100px;
             justify-self: center;
             align-self: center;
-            padding-right: 100px;
+            padding-right: 5px;
             margin-bottom: 20px;
+            border-radius: 20%;
         }
 
         #return-login {
