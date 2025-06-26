@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="{{ url_for('static', filename='js/nav_bar.js') }}"></script>
     <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/flash_messages.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css') }}">
     <title>Sign up</title>
 
@@ -16,30 +17,41 @@
     <div class=signup-page>
         <div class="signup-container">
             <form method="POST" action="{{ url_for('signup.signup') }}" class="signup-form">
-                <img src="{{ url_for('static', filename='images/icon-placeholder.png') }}" class="placeholder" alt="icon">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="placeholder" alt="icon">
                 <h2 class="header-text">Sign up</h2>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
                 <!-- {put each in div for poisitoning and entry box for styiling those}-->
                 <div class="username-entry">
                     <label for="username">Username:</label>
                     <input class="entry-box" type="text" id="username" name="username"
-                        placeholder="Enter your desired username (max 12 characters)" required>
+                        placeholder="Enter your desired username (max 32 characters)" maxlength="32" required>
                 </div>
 
                 <div class="email-entry">
                     <label for="email">Email:</label>
-                    <input class="entry-box" type="email" id="email" name="email" placeholder="Enter your Email address"
+                    <input class="entry-box" type="email" id="email" name="email" maxlength="64" placeholder="Enter your Email address"
                         required>
                 </div>
                 <!-- {put each in div for poisitoning and entry box for styiling those}-->
                 <div class="password-entry">
                     <label for="password">Password:</label>
-                    <input class="entry-box" type="password" id="password" name="password"
+                    <input class="entry-box" type="password" minlength="8" id="password" name="password"
                         placeholder="Enter your Password" required>
                 </div>
 
                 <div class="confirm-password-entry">
                     <label for="password">Confirm Password:</label>
-                    <input class="entry-box" type="password" id="password" name="password"
+                    <input class="entry-box" type="password" minlength="8" id="password" name="password"
                         placeholder="Confirm your Password" required>
                 </div>
                 <div class="checkbox-entry">

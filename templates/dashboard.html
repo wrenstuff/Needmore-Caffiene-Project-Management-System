@@ -17,6 +17,17 @@
   <div class="news-banner">
     <a>🚀 Welcome to Needmore Caffeine! Check out our latest updates and features!</a>
   </div>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <div class="flash-messages">
+      {% for category, message in messages %}
+      <div class="flash-message {{ category }}">
+          {{ message }}
+      </div>
+      {% endfor %}
+  </div>
+  {% endif %}
+  {% endwith %}
 
   <main class="main-content">
 
