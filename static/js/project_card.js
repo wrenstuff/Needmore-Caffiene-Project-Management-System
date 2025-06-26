@@ -4,7 +4,7 @@ class Project_Card extends HTMLElement {
     }
 
     connectedCallback() {
-        const uniqueId = this.getAttribute('id') || 'default-id';
+        const uniqueId = this.getAttribute('project-id') || 'default-id';
         const title = this.getAttribute('title') || 'Untitled';
         const owner = this.getAttribute('owner') || 'Unknown';
         const username = this.getAttribute('username') || '';
@@ -26,16 +26,8 @@ class Project_Card extends HTMLElement {
 
         // Add click-to-navigate behavior
         this.querySelector('.project').addEventListener('click', () => {
-            fetch('/project', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id: uniqueId })
-            }).then(res => res.text())
-                .then(html => {
-                    document.open();
-                    document.write(html);
-                    document.close();
-                });
+            window.location.href = `/project/${uniqueId}`;
+
         });
 
     }

@@ -112,21 +112,16 @@ def api_projects():
         ]
     }
 
-@app.route('/project', methods=['POST'])
+@app.route('/project/<int:project_id>')
 @login_required
-def project():
-    data = request.get_json()
-    project_id = data.get('id')
+def opened_project(project_id):
+    project = Project.query.get_or_404(project_id)
 
-    if not project_id:
-        return "Project ID is required", 400
+    # Optional: ensure that only the owner can access their project
+    if project.owner_id != current_user.id:
+        return "Unauthorized", 403
 
-    project = Project.query.filter_by(id=project_id, owner_id=current_user.id).first()
-
-    if not project:
-        return "Project not found or you don't have access to it", 404
-
-    return render_template('opened_project.html', user=current_user, project=project)
+    return render_template('opened_project.html', project=project, user=current_user)
 
 
 
