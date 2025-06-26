@@ -29,59 +29,35 @@
   {% endif %}
   {% endwith %}
 
-  <main class="main-content">
+  <main class="main-content wrapper">
 
     <div class="title-container">
       <span class="projects-title">Projects</span>
     </div>
     <div class="recent-projects-title">
-      <span class="section-title">Recent Projects</span>
+      <span class="section-title"><!--Recent Projects-->Create Project</span>
     </div>
     <!-- Example of a project card component -->
     <div class="project-list">
-      <comp-project-card title="Project one" description="This is a description of project one.">
-      </comp-project-card>
-      <comp-project-card title="Project one" description="This is a description of project one.">
-      </comp-project-card>
-      <comp-project-card title="Project one" description="This is a description of project one.">
-      </comp-project-card>
+      <form method="POST" action="/create_project-{{ username }}" class="form-container">
+        <input class="p-title" type="text" name="title" placeholder="Project Title" required>
+        <textarea class="p-desc" name="description" placeholder="Project Description"></textarea>
+        <button class="create" type="submit">Create Project</button>
+      </form>
     </div>
-
     <div class="all-projects-title">
-      <span class="section-title"> Your Projects</span>
+      <span class="section-title">All Projects</span>
     </div>
 
-    <div class="all-project-list">
-      <comp-project-card title="Project one" description="This is a description of project one.">
-      </comp-project-card>
-      <comp-project-card title="Project one" description="This is a description of project one.">
-      </comp-project-card>
-      <comp-project-card title="Project one" description="This is a description of project one.">
-      </comp-project-card>
-      <comp-project-card title="Project one" description="This is a description of project one.">
-      </comp-project-card>
-      <comp-project-card title="Project one" description="This is a description of project one.">
-      </comp-project-card>
+    <div class="all-project-list" id="project-container">
 
 
     </div>
+    <script src="{{ url_for('static', filename='js/projects.js') }}"></script>
   </main>
-
-  <div class="footer-spacer"><comp-footer></comp-footer></div>
-
-  {% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-  <div class="flash-messages">
-    {% for category, message in messages %}
-    <div class="flash-message {{ category }}">
-      {{ message }}
-    </div>
-    {% endfor %}
+  <div class="footer-spacer">
+    <comp-footer></comp-footer>
   </div>
-  {% endif %}
-  {% endwith %}
-  <h1>Dashboard</h1>
-  <comp-footer></comp-footer>
 </body>
 
 </html>

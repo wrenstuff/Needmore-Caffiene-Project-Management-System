@@ -112,6 +112,18 @@ def api_projects():
         ]
     }
 
+@app.route('/project/<int:project_id>')
+@login_required
+def opened_project(project_id):
+    project = Project.query.get_or_404(project_id)
+
+    # Optional: ensure that only the owner can access their project
+    if project.owner_id != current_user.id:
+        return "Unauthorized", 403
+
+    return render_template('opened_project.html', project=project, user=current_user)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

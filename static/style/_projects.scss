@@ -48,6 +48,82 @@
     gap: 10px;
     padding: 10px;
     margin: 0 auto;
+
+    .form-container {
+
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: color.$color-primary;
+        padding: 25px;
+        border-radius: 25px;
+
+        .p-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: color.$color-dark-text;
+            text-align: center;
+            margin-bottom: 10px;
+            border-radius: 10px;
+
+            &:focus {
+                outline: none;
+                border-color: color.$color-secondary;
+            }
+        }
+
+        textarea {
+            width: 300px;
+            height: 100px;
+            padding: 10px;
+            font-size: 16px;
+            color: color.$color-dark-text;
+            background-color: color.$color-light-text;
+            border: 1px solid color.$color-line;
+            border-radius: 10px;
+            resize: none;
+            margin-bottom: 10px;
+
+            &:focus {
+                outline: none;
+                border-color: color.$color-secondary;
+            }
+        }
+
+        .p-description {
+            display: block;
+            font-size: 16px;
+            color: color.$color-dark-text;
+            text-align: center;
+            margin-bottom: 20px;
+            height: 200px;
+            width: 300px;
+
+        }
+
+        .create {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            color: color.$color-dark-text;
+            text-align: center;
+            width: 200px;
+            height: 40px;
+            background-color: color.$color-primary;
+            border-radius: 20px;
+            padding: 5px 10px;
+            margin-top: 10px;
+
+            &:hover {
+                background-color: color.$color-secondary;
+                color: color.$color-light-text;
+            }
+        }
+
+    }
+
 }
 
 .section-title {
@@ -65,6 +141,7 @@
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    max-height: 50px;
 }
 
 .all-projects-title {

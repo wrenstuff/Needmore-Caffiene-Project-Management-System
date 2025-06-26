@@ -11,10 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             data.projects.forEach(project => {
                 const projectCard = document.createElement('comp-project-card');
-                projectCard.setAttribute('id', project.id);
+                projectCard.setAttribute('project-id', project.id);
                 projectCard.setAttribute('title', project.title);
-                projectCard.setAttribute('owner', project.owner);
+                projectCard.setAttribute('creator', project.owner);
                 container.appendChild(projectCard);
+
             });
 
         })
