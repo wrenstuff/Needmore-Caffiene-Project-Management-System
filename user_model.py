@@ -2,7 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
 db = SQLAlchemy()
 
-# Define the User model with usermixin for Flask-Login integration
+#define the Project model
 class Project(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
@@ -12,7 +12,8 @@ class Project(db.Model):
 
     def __repr__(self):
         return f'<Project {self.title}>'
-
+    
+# Define the User model with usermixin for Flask-Login integration
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(32), unique=True, nullable=False)
