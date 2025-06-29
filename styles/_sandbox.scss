@@ -1,206 +1,645 @@
-@use 'color' as c; // Temporarily not using, unsure where its going wrong, colours have been replaced with #000000 but this is temporary whilst troubleshooting//
+// -- IMAGE PATHS (For icons) --//
+$image-path: '../images/';
+$icons: (
+  'textbox': $image-path + 'textbox.png',
+  'pen': $image-path + 'pen.png',
+  'eraser': $image-path + 'eraser.png',
+  'colour-dropper': $image-path + 'colour_dropper.svg',
+  'shapes': $image-path + 'shapes.png',
+  'image-upload': $image-path + 'image_upload.png',
+  'bar-chart': $image-path + 'bar_chart.png',
+  'pie-chart': $image-path + 'pie_chart.png',
+  'project-card': $image-path + 'textbox.png',
+  'placeholder': $image-path + 'textbox.png'
+);
 
-// Global styles //
+// -- ICON MIXIN (Used to set the background image for each icon) --//
+@mixin icon-background($icon-name) {
+  background-image: url(map-get($icons, $icon-name));
+  background-size: 30px 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// -- GLOBAL --//
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    background: #fff;
-    font-family: Arial, sans-serif;
-    color: #000000;
+  font-family: Arial, sans-serif;
+  background: $color-bg-secondary;
+  color: $color-text-primary;
 }
 
-// TOOLBAR //
-.toolbar {
-    background: #000000;
-    box-sizing: border-box;
-    position: fixed;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px #00000033;
-    border: 1px solid #000000;
-    display: flex;
-    flex-direction: column;
-
-    .collapse-btn {
-      padding: 8px;
-      cursor: pointer;
-      border-bottom: 1px solid #000000;
-      background: #000000;
-      color: #000000;
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
-    }
-
-    .content {
-      flex: 1;
-      padding: 10px;
-      overflow: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+// -- SANDBOX CONTAINER --//
+.sandbox-container {
+  display: flex;
+  height: 100vh;
+  background: $color-bg-secondary;
 }
 
-.toolbar.left { 
-  top: 20px;
-  bottom: 20px;
-  left: 20px;
-  width: 200px;
+// -- SIDE TOOLBAR --//
+.side-toolbar {
+  width: 60px;
+  background: $color-bg-toolbar;
+  border-right: 1px solid $color-border-secondary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  gap: 5px;
+  position: relative;
 }
 
-.toolbar.right {
-    top: 20px;
-    bottom: 20px;
-    right: 20px;
-    width: 200px;
+// -- ICONS --//
+.icon {
+  width: 40px;
+  height: 40px;
+  background: $color-bg-primary;
+  border: 1px solid $color-border-secondary;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 18px;
+  color: $color-text-primary;
+  position: relative;
 }
 
-.toolbar.bottom {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 20px;
-    height: 150px;
-    width: 50%;
-    flex-direction: column;
-    z-index: 10000;
+.icon:hover {
+  background: $color-grey-200;
+  border-color: $color-border-primary;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px $color-shadow;
 }
 
-.toolbar.collapsed {
-    width: 50px !important;
-    height: 50px !important;
-
-  .content {
-    display: none;
-  }
-
-  .collapse-btn {
-    border-radius: 12px;
-  }
+.icon.selected {
+  background: $color-accent-selection;
+  color: $color-light-text;
+  border-color: $color-accent-selection;
+  box-shadow: 0 2px 8px rgba($color-accent-selection, 0.3);
 }
 
-// ICONS //
 .icon-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-
-    .icon {
-      width: 40px;
-      height: 40px;
-      background: #000000;
-      border: 1px solid #000000;
-      box-sizing: border-box;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.2s ease, outline 0.2s ease; // Smoother transitions for hover and selection //
-      display: inline-block;
-      width: 32px;  
-      height: 32px;
-      font-weight: bold;
-      font-size: 24px;
-      text-align: center;
-      line-height: 32px; 
-      background-color: #ccc; 
-      border-radius: 4px; 
-
-      &:hover {
-        background: lighten(#000000, 5%);
-      }
-
-      &.selected {
-        outline: 2px solid #000000;
-        background: lighten(#000000, 10%);
-      }
-    }
-
-    &.horizontal {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-    }
-}
-
-
-// SNADBOX //
-.sandbox {
-    z-index: 1;
-    margin-top: 70px;
-    width: 1980px;
-    height: 1020px;
-    max-width: 3960px;
-    max-height: 2040px;
-    resize: none; 
-    margin: 80px auto 0 auto;
-    position: relative;
-    border: 4px solid #000000;
-    border-radius: 12px;
-    overflow: hidden;
-    background-color: #080808;
-    background-image: // Visible grid lines //
-      linear-gradient(to right, #444 2px, transparent 2px),
-      linear-gradient(to bottom, #444 2px, transparent 2px);
-    background-size: 200px 200px;
-    border: 2px dashed lime;
-
-    .canvas {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  canvas#drawCanvas { // Main drawing canvas //
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 998; 
-    pointer-events: auto;
-  }
-}
-
-.grid-overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  pointer-events: none; 
-  background-image:
-    linear-gradient(to right, #444 2px, transparent 2px),
-    linear-gradient(to bottom, #444 2px, transparent 2px);
-  background-size: 20px 20px;
-  z-index: 1;
-}
-
-// Text box drag styling //
-.draggable {
-  position: absolute;
-  width: 150px;
-  height: 150px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
   padding: 10px;
-  background: white;
-  border: 1px dashed red;
-  transition: left 0.05s ease, top 0.05s ease; // Subtle smoothness when dragging //
-  resize: both;
-  overflow: auto;
-  z-index: 1100;
-  color: black;
-  cursor: move;
+  background: $color-bg-toolbar;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+.icon-grid .icon {
+  width: 35px;
+  height: 35px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-grid .icon:hover {
+  background: $color-grey-300;
+  border-color: $color-border-primary;
+}
+
+// -- SANDBOX AREA --//
+.sandbox-area {
+  flex: 1;
+  position: relative;
+  background: $color-bg-primary;
+  overflow: hidden;
+  border: 2px solid $color-border-secondary;
+  border-radius: 8px;
+  margin: 10px;
+  box-shadow: 0 4px 12px $color-shadow;
+}
+
+#drawingCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
   border-radius: 6px;
-  box-shadow: 0 2px 6px #00000033;
-  user-select: none;
+}
 
-  &:focus {
-    outline: 2px solid #000000;
-  }
+// -- TEXT BOX --//
+.text-box-container {
+  position: absolute;
+  width: 320px;
+  height: 180px;
+  background: $color-bg-primary;
+  border: 2px solid $color-border-secondary;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px $color-shadow;
+  z-index: 10;
+  cursor: move;
+  transition: all 0.2s ease;
+}
 
-  &:hover {
-    cursor: grab;
-  }
+.text-box-container:hover {
+  border-color: $color-border-primary;
+  box-shadow: 0 4px 12px $color-shadow;
+}
 
-  &:active {
-    cursor: grabbing;
+.text-box-container:focus-within {
+  outline: 2px solid $color-accent-selection;
+  background: $color-accent-light;
+  border-color: $color-accent-selection;
+}
+
+.editable-box {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  background: transparent;
+  color: $color-text-primary;
+  border-radius: 6px;
+}
+
+.placeholder {
+  color: $color-text-muted;
+  pointer-events: none;
+  font-style: italic;
+}
+
+// -- DELETE BUTTON --//
+.delete-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  background: $color-btn-danger;
+  color: $color-light-text;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px $color-shadow;
+}
+
+.delete-btn:hover {
+  background: $color-warning;
+  transform: scale(1.1);
+}
+
+// -- HAMBURGER BUTTON --//
+.hamburger-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+  background: $color-grey-300;
+  border: 1px solid $color-border-secondary;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.hamburger-btn:hover {
+  background: $color-grey-400;
+  border-color: $color-border-primary;
+}
+
+// -- TEXTBOX TOOLBAR --//
+.textbox-toolbar {
+  position: absolute;
+  top: 35px;
+  right: 5px;
+  background: $color-bg-primary;
+  border: 1px solid $color-border-secondary;
+  border-radius: 6px;
+  padding: 8px;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 2px 8px $color-shadow;
+  z-index: 30;
+  min-width: 120px;
+}
+
+.textbox-toolbar.open {
+  display: flex;
+}
+
+.textbox-toolbar button,
+.textbox-toolbar select {
+  padding: 4px 8px;
+  border: 1px solid $color-border-secondary;
+  background: $color-bg-primary;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  min-width: 30px;
+  transition: all 0.2s ease;
+}
+
+.textbox-toolbar button:hover,
+.textbox-toolbar select:hover {
+  background: $color-grey-100;
+  border-color: $color-border-primary;
+}
+
+.textbox-toolbar .bold-btn {
+  font-weight: bold;
+}
+
+.textbox-toolbar .italic-btn {
+  font-style: italic;
+}
+
+.textbox-toolbar .underline-btn {
+  text-decoration: underline;
+}
+
+// -- PROJECT CARD STYLES --//
+.project-card {
+  position: absolute;
+  width: 280px;
+  height: 220px;
+  background: linear-gradient(135deg, $color-gradient-primary-start 0%, $color-gradient-primary-end 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px $color-shadow;
+  z-index: 10;
+  cursor: move;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 6px 20px $color-shadow;
+  transform: translateY(-2px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: $color-light-text;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%;
+  margin-right: 8px;
+}
+
+.card-title::placeholder {
+  color: rgba($color-light-text, 0.7);
+}
+
+.card-delete {
+  background: $color-btn-danger;
+  color: $color-light-text;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.card-delete:hover {
+  background: $color-warning;
+  transform: scale(1.1);
+}
+
+.card-description {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: $color-light-text;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  resize: none;
+  width: 100%;
+  height: 100px;
+}
+
+.project-card .card-description::placeholder {
+  color: rgba($color-light-text, 0.7);
+}
+
+.project-card .card-date {
+  opacity: 0.8;
+  color: $color-light-text;
+  font-size: 12px;
+}
+
+// -- CURSORS --//
+canvas.pen-cursor {
+  cursor: url('data:image/svg+xml;utf8,<svg height="24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="2" fill="black"/></svg>') 12 12, auto;
+}
+
+// -- DIALOG STYLES --//
+.font-size-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($color-dark-text, 0.5);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog-content {
+  background: $color-bg-primary;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 32px $color-shadow;
+  max-width: 400px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.dialog-content h3 {
+  margin: 0 0 20px 0;
+  color: $color-text-primary;
+  font-size: 20px;
+}
+
+.font-size-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.font-size-options button {
+  padding: 8px 12px;
+  border: 1px solid $color-border-secondary;
+  background: $color-bg-primary;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.font-size-options button:hover {
+  background: $color-grey-100;
+  border-color: $color-accent-selection;
+}
+
+.close-btn {
+  padding: 8px 16px;
+  border: 1px solid $color-border-secondary;
+  background: $color-bg-primary;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: $color-grey-100;
+  border-color: $color-accent-selection;
+}
+
+// -- NOTIFICATIONS --//
+.notification {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 4px;
+  z-index: 10000;
+  box-shadow: 0 2px 8px $color-shadow;
+  animation: slideIn 0.3s ease;
+  color: $color-light-text;
+  
+  &.success {
+    background: $color-success;
   }
+  
+  &.error {
+    background: $color-error;
+  }
+  
+  &.info {
+    background: $color-info;
+  }
+}
+
+// -- FEATURE POPUP --//
+.feature-popup {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  width: auto;
+  height: auto;
+  z-index: 10000;
+  pointer-events: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.feature-popup .popup-content {
+  background: $color-bg-primary;
+  padding: 18px 32px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 24px $color-shadow;
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  animation: slideDownFromTop 0.4s ease;
+  font-size: 15px;
+}
+
+.feature-popup .popup-content.red-theme {
+  background: $color-error;
+  color: $color-light-text;
+  border: 2px solid $color-warning;
+}
+
+.feature-popup .popup-content h3 {
+  margin: 0 0 10px 0;
+  color: $color-light-text;
+  font-size: 17px;
+}
+
+.feature-popup .popup-content p {
+  margin: 0;
+  color: $color-light-text;
+  font-size: 14px;
+}
+
+// -- TEXTBOX TOOLBAR BUTTONS --//
+.textbox-toolbar .bold-btn {
+  font-weight: bold;
+}
+
+.textbox-toolbar .italic-btn {
+  font-style: italic;
+}
+
+.textbox-toolbar .underline-btn {
+  text-decoration: underline;
+}
+
+// -- ANIMATIONS --//
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideDownFromTop {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpToTop {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
+// -- CANVAS CURSOR STYLES --//
+.canvas-default {
+  cursor: default;
+}
+
+.canvas-crosshair {
+  cursor: crosshair;
+}
+
+.canvas-cell {
+  cursor: cell;
+}
+
+.canvas-grabbing {
+  cursor: grabbing;
+}
+
+.canvas-move {
+  cursor: move;
+}
+
+// -- DRAGGABLE ELEMENT CURSORS --//
+.draggable-element {
+  cursor: move;
+}
+
+.draggable-element.grabbing {
+  cursor: grabbing;
+}
+
+// -- POSITIONING UTILITY CLASSES --//
+.position-absolute {
+  position: absolute;
+}
+
+// -- ELEMENT POSITIONING --//
+.text-box-container,
+.project-card {
+  position: absolute;
+}
+
+// -- GRID BACKGROUND STYLES --//
+.sandbox-grid {
+  background-image: 
+    repeating-linear-gradient(to right, $color-grid-primary 0 1px, transparent 1px 50px),
+    repeating-linear-gradient(to bottom, $color-grid-secondary 0 1px, transparent 1px 50px);
+}
+
+.sandbox-no-grid {
+  background-image: none;
+}
+
+// -- ANIMATION UTILITY CLASSES --//
+.animate-slide-out {
+  animation: slideOut 0.3s ease;
+}
+
+.animate-fade-out {
+  animation: fadeOut 0.3s ease;
+}
+
+.animate-slide-up {
+  animation: slideUpToTop 0.4s ease;
 }

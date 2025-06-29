@@ -1,92 +1,66 @@
 <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <script type="module" src="../components/nav_bar.js"></script>
-      <script type="module" src="../components/toolbar.js"></script>
-      <script type="module" src="../components/textbox.js"></script>
-      <link rel="stylesheet" href="../styles/main.css">
-      <title>Sandbox</title>
-    </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sandbox</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <script type="module" src="../components/nav_bar.js"></script>
+  <script type="module" src="../components/sandbox_app.js"></script>
+  <script type="module" src="../components/textbox.js"></script>
+</head>
 
-    <body>
-      <!-- Wont allow the textbox to be visible when implemented, will troubleshoot -->
-    <!-- <comp-nav-bar></comp-nav-bar>  --> 
+<body>
+  <!-- NAVBAR -->
+  <comp-nav-bar></comp-nav-bar>
 
-    <div class="sandbox" id="sandboxArea">
-      <canvas id="drawingCanvas" width="800" height="600"></canvas>
-    </div>
+  <!-- SANDBOX -->
+  <div class="sandbox" id="sandboxArea">
+    <canvas id="drawingCanvas"></canvas>
+  </div>
 
-    <div class="toolbar left" id="leftToolbar">
-      <button class="collapse-btn" onclick="toggleToolbar('bottomToolbar')">☰</button>
-      <div class="content">
-          <div class="icon-grid horizontal">
-            <div class="icon">T</div>
-          </div>
+  <!-- TOOLBARS -->
+
+  <!-- Left -->
+  <div class="toolbar left" id="leftToolbar">
+    <div class="content">
+      <div class="icon-grid">
+        <div class="icon" data-tool="projectCard" data-icon="project-card" title="Project Card"></div>
+        <div class="icon" data-tool="heading" data-icon="heading" title="Heading"></div>
+        <div class="icon" data-tool="barGraph" data-icon="bar-chart" title="Bar Graph"></div>
+        <div class="icon" data-tool="pieChart" data-icon="pie-chart" title="Pie Chart"></div>
+        <div class="icon" data-tool="table" data-icon="table" title="Table"></div>
       </div>
     </div>
-    <div class="toolbar right" id="rightToolbar">
-      <button class="collapse-btn" onclick="toggleToolbar('bottomToolbar')">☰</button>
-      <div class="content">
-          <div class="icon-grid horizontal">
-            <div class="icon">T</div>
-          </div>
+  </div>
+
+  <!-- Right -->
+  <div class="toolbar right" id="rightToolbar">
+    <div class="content">
+      <div class="icon-grid">
+        <div class="icon" data-tool="colorPicker" data-icon="colour-dropper" title="Color Picker"></div>
+        <div class="icon" data-tool="fontSize" data-icon="font-size" title="Font Size">Aa</div>
+        <div class="icon" data-tool="layers" data-icon="layers" title="Layers"></div>
+        <div class="icon" data-tool="settings" data-icon="settings" title="Settings"></div>
       </div>
     </div>
+  </div>
 
-    <div class="toolbar bottom" id="bottomToolbar">
-      <button class="collapse-btn" onclick="toggleToolbar('bottomToolbar')">☰</button>
-      <div class="content">
-          <div class="icon-grid horizontal">
-            <div class="icon" onclick="selectTool(this, 'addTextBox')" title="Text Tool">T</div>
-            <div class="icon" onclick="selectTool(this, 'draw')" title="Draw Tool">✏️</div>
-            <div class="icon" onclick="selectTool(this, 'erase')" title="Eraser">🧽</div>
-            <div class="icon" onclick="selectTool(this, 'line')" title="Line Tool">📏</div>
-            <div class="icon" onclick="selectTool(this, 'shape')" title="Shape Tool">🔲</div>
-            <div class="icon" onclick="selectTool(this, 'uploadImage')" title="Upload Image">🖼️</div>
-            <div class="icon" onclick="selectTool(this, 'move')" title="Move/Select">🧭</div>
-          </div>
+  <!-- Bottom -->
+  <div class="toolbar bottom" id="bottomToolbar">
+    <button class="collapse-btn" onclick="toggleToolbar('bottomToolbar')"></button>
+    <div class="content">
+      <div class="icon-grid horizontal">
+        <div class="icon" data-tool="addTextBox" data-icon="textbox" title="Text Tool"></div>
+        <div class="icon" data-tool="draw" data-icon="pen" title="Draw Tool"></div>
+        <div class="icon" data-tool="erase" data-icon="eraser" title="Eraser"></div>
+        <div class="icon" data-tool="colorPicker" data-icon="colour-dropper" title="Color Picker"></div>
+        <div class="icon" data-tool="shape" data-icon="shapes" title="Shape Tool"></div>
+        <div class="icon" data-tool="uploadImage" data-icon="image-upload" title="Upload Image"></div>
+        <div class="icon" data-tool="move" data-icon="move" title="Move/Select"></div>
       </div>
     </div>
+  </div>
 
-    <script type="module"> // Js module, will move to a separate file later- implemented here to show logic works //
-      import { toggleToolbar } from '../components/toolbar.js';
-      import { addTextBox } from '../components/textbox.js';
-      window.toggleToolbar = toggleToolbar;
-      window.addTextBox = addTextBox;
-
-      window.selectTool = function (el, toolName) {
-      document.querySelectorAll('.icon').forEach(i => i.classList.remove('selected'));
-      el.classList.add('selected');
-
-      switch (toolName) { // Switch case to handle tool selection //
-        case 'addTextBox':
-          addTextBox();
-          break;
-        case 'draw':
-          console.log("Draw tool selected");
-          break;
-        case 'erase':
-          console.log("Eraser selected");
-          break;
-        case 'line':
-          console.log("Line tool selected");
-          break;
-        case 'shape':
-          console.log("Shape tool selected");
-          break;
-        case 'uploadImage':
-          console.log("Upload image selected");
-          break;
-        case 'move':
-          console.log("Move/select tool selected");
-          break;
-        default:
-          console.log("Unknown tool:", toolName);
-      }
-    };
-
-    </script>
-  </body>
+</body>
 </html>
