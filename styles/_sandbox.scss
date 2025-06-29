@@ -177,7 +177,7 @@ body {
   font-style: italic;
 }
 
-// -- DELETE BUTTON --//
+//-- DELETE BUTTON --//
 .delete-btn {
   position: absolute;
   top: -8px;
@@ -518,6 +518,52 @@ canvas.pen-cursor {
   text-decoration: underline;
 }
 
+
+// -- CANVAS CURSORS --//
+.canvas-default {
+  cursor: default;
+}
+.canvas-crosshair {
+  cursor: crosshair;
+}
+.canvas-cell {
+  cursor: cell;
+}
+.canvas-grabbing {
+  cursor: grabbing;
+}
+.canvas-move {
+  cursor: move;
+}
+
+// Draggable el;ement cursor //
+.draggable-element {
+  cursor: move;
+}
+.draggable-element.grabbing {
+  cursor: grabbing;
+}
+.position-absolute {
+  position: absolute;
+}
+
+// Element positioning //
+.text-box-container,
+.project-card {
+  position: absolute;
+}
+
+// Grid Backgrounds //
+.sandbox-grid {
+  background-image: 
+    repeating-linear-gradient(to right, color.$color-grid-primary 0 1px, transparent 1px 50px),
+    repeating-linear-gradient(to bottom, color.$color-grid-secondary 0 1px, transparent 1px 50px);
+}
+
+.sandbox-no-grid {
+  background-image: none;
+}
+
 // -- ANIMATIONS --//
 @keyframes slideIn {
   from {
@@ -529,7 +575,6 @@ canvas.pen-cursor {
     opacity: 1;
   }
 }
-
 @keyframes slideOut {
   from {
     transform: translateX(0);
@@ -540,7 +585,6 @@ canvas.pen-cursor {
     opacity: 0;
   }
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -549,7 +593,6 @@ canvas.pen-cursor {
     opacity: 1;
   }
 }
-
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -558,7 +601,6 @@ canvas.pen-cursor {
     opacity: 0;
   }
 }
-
 @keyframes slideDownFromTop {
   from {
     transform: translateY(-20px);
@@ -569,7 +611,6 @@ canvas.pen-cursor {
     opacity: 1;
   }
 }
-
 @keyframes slideUpToTop {
   from {
     transform: translateY(0);
@@ -581,67 +622,12 @@ canvas.pen-cursor {
   }
 }
 
-// -- CANVAS CURSOR STYLES --//
-.canvas-default {
-  cursor: default;
-}
-
-.canvas-crosshair {
-  cursor: crosshair;
-}
-
-.canvas-cell {
-  cursor: cell;
-}
-
-.canvas-grabbing {
-  cursor: grabbing;
-}
-
-.canvas-move {
-  cursor: move;
-}
-
-// -- DRAGGABLE ELEMENT CURSORS --//
-.draggable-element {
-  cursor: move;
-}
-
-.draggable-element.grabbing {
-  cursor: grabbing;
-}
-
-// -- POSITIONING UTILITY CLASSES --//
-.position-absolute {
-  position: absolute;
-}
-
-// -- ELEMENT POSITIONING --//
-.text-box-container,
-.project-card {
-  position: absolute;
-}
-
-// -- GRID BACKGROUND STYLES --//
-.sandbox-grid {
-  background-image: 
-    repeating-linear-gradient(to right, color.$color-grid-primary 0 1px, transparent 1px 50px),
-    repeating-linear-gradient(to bottom, color.$color-grid-secondary 0 1px, transparent 1px 50px);
-}
-
-.sandbox-no-grid {
-  background-image: none;
-}
-
-// -- ANIMATION UTILITY CLASSES --//
 .animate-slide-out {
   animation: slideOut 0.3s ease;
 }
-
 .animate-fade-out {
   animation: fadeOut 0.3s ease;
 }
-
 .animate-slide-up {
   animation: slideUpToTop 0.4s ease;
 }
