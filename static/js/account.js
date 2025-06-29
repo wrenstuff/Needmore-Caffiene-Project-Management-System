@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Toggle visibility when parent is clicked
             section.addEventListener("click", (e) => {
-                // Avoid toggling when clicking on a form input/button inside
+                // Prevent toggling if the click is inside a form
                 if (e.target.closest("form")) return;
 
                 const isVisible = settingBox.style.display === "block";

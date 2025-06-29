@@ -35,13 +35,6 @@ app.register_blueprint(login_bp)
 def index():
     return redirect(url_for('login.login'))
 
-@app.route('/test_login') # Endpoint to test login status
-def test_login():
-    if current_user.is_authenticated:
-        return f"User is logged in as: {current_user.username}"
-    else:
-        return "User is NOT logged in."
-
 # Route to render the dashboard page
 @app.route('/dashboard-<username>')
 @login_required
@@ -59,7 +52,7 @@ def about_us(username):
 def account(username):
     return render_template('account.html' , user=current_user, username=username)
 
-
+# Create the database tables if they don't exist
 with app.app_context():
     db.create_all()
 
@@ -86,6 +79,7 @@ def pricing(username):
 def projects(username):
     return render_template('projects.html' , user=current_user, username=username)
 
+# Route to create a new project
 @app.route('/create_project-<username>', methods=['GET', 'POST'])
 @login_required
 def create_project(username):
@@ -96,6 +90,7 @@ def create_project(username):
     db.session.commit()
     return redirect(url_for('projects', username=username))
 
+# API endpoint to get the list of projects for the current user
 @app.route('/api/projects')
 @login_required
 def api_projects():
@@ -111,13 +106,13 @@ def api_projects():
             } for p in projects
         ]
     }
-
+# Route to open a specific project
 @app.route('/project/<int:project_id>')
 @login_required
 def opened_project(project_id):
     project = Project.query.get_or_404(project_id)
 
-    # Optional: ensure that only the owner can access their project
+    #ensure that only the owner can access their project
     if project.owner_id != current_user.id:
         return "Unauthorized", 403
 
