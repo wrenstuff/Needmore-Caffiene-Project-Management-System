@@ -1,0 +1,46 @@
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #b88989;
+    z-index: 0;
+}
+
+#toolbar {
+    background: #333;
+    color: white;
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    cursor: move;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10px;
+    user-select: none;
+    transition: left 0.1s ease, top 0.1s ease;
+    z-index: 10;
+
+    button {
+        background: #555;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        font-size: 14px;
+
+        &:hover {
+            background: #777;
+        }
+    }
+
+    span#status {
+        color: #eee;
+        font-size: 13px;
+        align-self: center;
+    }
+}
