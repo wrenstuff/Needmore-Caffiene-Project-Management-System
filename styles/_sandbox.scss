@@ -1,3 +1,5 @@
+@use 'color';
+
 // -- IMAGE PATHS (For icons) --//
 $image-path: '../images/';
 $icons: (
@@ -30,22 +32,22 @@ $icons: (
 
 body {
   font-family: Arial, sans-serif;
-  background: $color-bg-secondary;
-  color: $color-text-primary;
+  background: color.$color-bg-secondary;
+  color: color.$color-text-primary;
 }
 
 // -- SANDBOX CONTAINER --//
 .sandbox-container {
   display: flex;
   height: 100vh;
-  background: $color-bg-secondary;
+  background: color.$color-bg-secondary;
 }
 
 // -- SIDE TOOLBAR --//
 .side-toolbar {
   width: 60px;
-  background: $color-bg-toolbar;
-  border-right: 1px solid $color-border-secondary;
+  background: color.$color-bg-toolbar;
+  border-right: 1px solid color.$color-border-secondary;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,8 +60,8 @@ body {
 .icon {
   width: 40px;
   height: 40px;
-  background: $color-bg-primary;
-  border: 1px solid $color-border-secondary;
+  background: color.$color-bg-primary;
+  border: 1px solid color.$color-border-secondary;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -67,22 +69,22 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 18px;
-  color: $color-text-primary;
+  color: color.$color-text-primary;
   position: relative;
 }
 
 .icon:hover {
-  background: $color-grey-200;
-  border-color: $color-border-primary;
+  background: color.$color-grey-200;
+  border-color: color.$color-border-primary;
   transform: translateY(-1px);
-  box-shadow: 0 2px 8px $color-shadow;
+  box-shadow: 0 2px 8px color.$color-shadow;
 }
 
 .icon.selected {
-  background: $color-accent-selection;
-  color: $color-light-text;
-  border-color: $color-accent-selection;
-  box-shadow: 0 2px 8px rgba($color-accent-selection, 0.3);
+  background: color.$color-accent-selection;
+  color: color.$color-light-text;
+  border-color: color.$color-accent-selection;
+  box-shadow: 0 2px 8px rgba(color.$color-accent-selection, 0.3);
 }
 
 .icon-grid {
@@ -90,7 +92,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 5px;
   padding: 10px;
-  background: $color-bg-toolbar;
+  background: color.$color-bg-toolbar;
   border-radius: 8px;
   margin: 10px;
 }
@@ -105,20 +107,20 @@ body {
 }
 
 .icon-grid .icon:hover {
-  background: $color-grey-300;
-  border-color: $color-border-primary;
+  background: color.$color-grey-300;
+  border-color: color.$color-border-primary;
 }
 
 // -- SANDBOX AREA --//
 .sandbox-area {
   flex: 1;
   position: relative;
-  background: $color-bg-primary;
+  background: color.$color-bg-primary;
   overflow: hidden;
-  border: 2px solid $color-border-secondary;
+  border: 2px solid color.$color-border-secondary;
   border-radius: 8px;
   margin: 10px;
-  box-shadow: 0 4px 12px $color-shadow;
+  box-shadow: 0 4px 12px color.$color-shadow;
 }
 
 #drawingCanvas {
@@ -134,24 +136,24 @@ body {
   position: absolute;
   width: 320px;
   height: 180px;
-  background: $color-bg-primary;
-  border: 2px solid $color-border-secondary;
+  background: color.$color-bg-primary;
+  border: 2px solid color.$color-border-secondary;
   border-radius: 8px;
-  box-shadow: 0 2px 8px $color-shadow;
+  box-shadow: 0 2px 8px color.$color-shadow;
   z-index: 10;
   cursor: move;
   transition: all 0.2s ease;
 }
 
 .text-box-container:hover {
-  border-color: $color-border-primary;
-  box-shadow: 0 4px 12px $color-shadow;
+  border-color: color.$color-border-primary;
+  box-shadow: 0 4px 12px color.$color-shadow;
 }
 
 .text-box-container:focus-within {
-  outline: 2px solid $color-accent-selection;
-  background: $color-accent-light;
-  border-color: $color-accent-selection;
+  outline: 2px solid color.$color-accent-selection;
+  background: color.$color-accent-light;
+  border-color: color.$color-accent-selection;
 }
 
 .editable-box {
@@ -165,12 +167,12 @@ body {
   font-size: 14px;
   line-height: 1.4;
   background: transparent;
-  color: $color-text-primary;
+  color: color.$color-text-primary;
   border-radius: 6px;
 }
 
 .placeholder {
-  color: $color-text-muted;
+  color: color.$color-text-muted;
   pointer-events: none;
   font-style: italic;
 }
@@ -182,8 +184,8 @@ body {
   right: -8px;
   width: 20px;
   height: 20px;
-  background: $color-btn-danger;
-  color: $color-light-text;
+  background: color.$color-btn-danger;
+  color: color.$color-light-text;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -193,11 +195,11 @@ body {
   justify-content: center;
   z-index: 20;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 4px $color-shadow;
+  box-shadow: 0 2px 4px color.$color-shadow;
 }
 
 .delete-btn:hover {
-  background: $color-warning;
+  background: color.$color-warning;
   transform: scale(1.1);
 }
 
@@ -208,8 +210,8 @@ body {
   right: 5px;
   width: 24px;
   height: 24px;
-  background: $color-grey-300;
-  border: 1px solid $color-border-secondary;
+  background: color.$color-grey-300;
+  border: 1px solid color.$color-border-secondary;
   border-radius: 4px;
   cursor: pointer;
   font-size: 12px;
@@ -220,8 +222,8 @@ body {
 }
 
 .hamburger-btn:hover {
-  background: $color-grey-400;
-  border-color: $color-border-primary;
+  background: color.$color-grey-400;
+  border-color: color.$color-border-primary;
 }
 
 // -- TEXTBOX TOOLBAR --//
@@ -229,14 +231,14 @@ body {
   position: absolute;
   top: 35px;
   right: 5px;
-  background: $color-bg-primary;
-  border: 1px solid $color-border-secondary;
+  background: color.$color-bg-primary;
+  border: 1px solid color.$color-border-secondary;
   border-radius: 6px;
   padding: 8px;
   display: none;
   flex-direction: column;
   gap: 4px;
-  box-shadow: 0 2px 8px $color-shadow;
+  box-shadow: 0 2px 8px color.$color-shadow;
   z-index: 30;
   min-width: 120px;
 }
@@ -248,8 +250,8 @@ body {
 .textbox-toolbar button,
 .textbox-toolbar select {
   padding: 4px 8px;
-  border: 1px solid $color-border-secondary;
-  background: $color-bg-primary;
+  border: 1px solid color.$color-border-secondary;
+  background: color.$color-bg-primary;
   border-radius: 4px;
   cursor: pointer;
   font-size: 12px;
@@ -259,8 +261,8 @@ body {
 
 .textbox-toolbar button:hover,
 .textbox-toolbar select:hover {
-  background: $color-grey-100;
-  border-color: $color-border-primary;
+  background: color.$color-grey-100;
+  border-color: color.$color-border-primary;
 }
 
 .textbox-toolbar .bold-btn {
@@ -280,9 +282,9 @@ body {
   position: absolute;
   width: 280px;
   height: 220px;
-  background: linear-gradient(135deg, $color-gradient-primary-start 0%, $color-gradient-primary-end 100%);
+  background: linear-gradient(135deg, color.$color-gradient-primary-start 0%, color.$color-gradient-primary-end 100%);
   border-radius: 12px;
-  box-shadow: 0 4px 16px $color-shadow;
+  box-shadow: 0 4px 16px color.$color-shadow;
   z-index: 10;
   cursor: move;
   padding: 16px;
@@ -292,7 +294,7 @@ body {
 }
 
 .project-card:hover {
-  box-shadow: 0 6px 20px $color-shadow;
+  box-shadow: 0 6px 20px color.$color-shadow;
   transform: translateY(-2px);
 }
 
@@ -307,7 +309,7 @@ body {
   background: transparent;
   border: none;
   outline: none;
-  color: $color-light-text;
+  color: color.$color-light-text;
   font-size: 18px;
   font-weight: bold;
   width: 100%;
@@ -315,12 +317,12 @@ body {
 }
 
 .card-title::placeholder {
-  color: rgba($color-light-text, 0.7);
+  color: rgba(color.$color-light-text, 0.7);
 }
 
 .card-delete {
-  background: $color-btn-danger;
-  color: $color-light-text;
+  background: color.$color-btn-danger;
+  color: color.$color-light-text;
   border: none;
   border-radius: 50%;
   width: 24px;
@@ -334,7 +336,7 @@ body {
 }
 
 .card-delete:hover {
-  background: $color-warning;
+  background: color.$color-warning;
   transform: scale(1.1);
 }
 
@@ -343,7 +345,7 @@ body {
   background: transparent;
   border: none;
   outline: none;
-  color: $color-light-text;
+  color: color.$color-light-text;
   font-size: 14px;
   line-height: 1.4;
   margin-bottom: 15px;
@@ -353,12 +355,12 @@ body {
 }
 
 .project-card .card-description::placeholder {
-  color: rgba($color-light-text, 0.7);
+  color: rgba(color.$color-light-text, 0.7);
 }
 
 .project-card .card-date {
   opacity: 0.8;
-  color: $color-light-text;
+  color: color.$color-light-text;
   font-size: 12px;
 }
 
@@ -374,7 +376,7 @@ canvas.pen-cursor {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba($color-dark-text, 0.5);
+  background: rgba(color.$color-dark-text, 0.5);
   z-index: 10000;
   display: flex;
   align-items: center;
@@ -382,10 +384,10 @@ canvas.pen-cursor {
 }
 
 .dialog-content {
-  background: $color-bg-primary;
+  background: color.$color-bg-primary;
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 8px 32px $color-shadow;
+  box-shadow: 0 8px 32px color.$color-shadow;
   max-width: 400px;
   width: 90%;
   max-height: 80vh;
@@ -394,7 +396,7 @@ canvas.pen-cursor {
 
 .dialog-content h3 {
   margin: 0 0 20px 0;
-  color: $color-text-primary;
+  color: color.$color-text-primary;
   font-size: 20px;
 }
 
@@ -407,30 +409,30 @@ canvas.pen-cursor {
 
 .font-size-options button {
   padding: 8px 12px;
-  border: 1px solid $color-border-secondary;
-  background: $color-bg-primary;
+  border: 1px solid color.$color-border-secondary;
+  background: color.$color-bg-primary;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .font-size-options button:hover {
-  background: $color-grey-100;
-  border-color: $color-accent-selection;
+  background: color.$color-grey-100;
+  border-color: color.$color-accent-selection;
 }
 
 .close-btn {
   padding: 8px 16px;
-  border: 1px solid $color-border-secondary;
-  background: $color-bg-primary;
+  border: 1px solid color.$color-border-secondary;
+  background: color.$color-bg-primary;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .close-btn:hover {
-  background: $color-grey-100;
-  border-color: $color-accent-selection;
+  background: color.$color-grey-100;
+  border-color: color.$color-accent-selection;
 }
 
 // -- NOTIFICATIONS --//
@@ -441,20 +443,20 @@ canvas.pen-cursor {
   padding: 12px 20px;
   border-radius: 4px;
   z-index: 10000;
-  box-shadow: 0 2px 8px $color-shadow;
+  box-shadow: 0 2px 8px color.$color-shadow;
   animation: slideIn 0.3s ease;
-  color: $color-light-text;
+  color: color.$color-light-text;
   
   &.success {
-    background: $color-success;
+    background: color.$color-success;
   }
   
   &.error {
-    background: $color-error;
+    background: color.$color-error;
   }
   
   &.info {
-    background: $color-info;
+    background: color.$color-info;
   }
 }
 
@@ -473,11 +475,11 @@ canvas.pen-cursor {
 }
 
 .feature-popup .popup-content {
-  background: $color-bg-primary;
+  background: color.$color-bg-primary;
   padding: 18px 32px;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 24px $color-shadow;
+  box-shadow: 0 4px 24px color.$color-shadow;
   max-width: 320px;
   width: 100%;
   margin: 0 auto;
@@ -486,20 +488,20 @@ canvas.pen-cursor {
 }
 
 .feature-popup .popup-content.red-theme {
-  background: $color-error;
-  color: $color-light-text;
-  border: 2px solid $color-warning;
+  background: color.$color-error;
+  color: color.$color-light-text;
+  border: 2px solid color.$color-warning;
 }
 
 .feature-popup .popup-content h3 {
   margin: 0 0 10px 0;
-  color: $color-light-text;
+  color: color.$color-light-text;
   font-size: 17px;
 }
 
 .feature-popup .popup-content p {
   margin: 0;
-  color: $color-light-text;
+  color: color.$color-light-text;
   font-size: 14px;
 }
 
@@ -623,8 +625,8 @@ canvas.pen-cursor {
 // -- GRID BACKGROUND STYLES --//
 .sandbox-grid {
   background-image: 
-    repeating-linear-gradient(to right, $color-grid-primary 0 1px, transparent 1px 50px),
-    repeating-linear-gradient(to bottom, $color-grid-secondary 0 1px, transparent 1px 50px);
+    repeating-linear-gradient(to right, color.$color-grid-primary 0 1px, transparent 1px 50px),
+    repeating-linear-gradient(to bottom, color.$color-grid-secondary 0 1px, transparent 1px 50px);
 }
 
 .sandbox-no-grid {
